@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>理解闭包</title>
+</head>
+<body>
+    <script>
+        function fn1(){
+            var a = 2;
+            var b = 'abc';
+            function fn2(){
+                console.log(a);
+            }
+            fn2();
+
+        }
+        fn1();
+    </script>
+</body>
+</html>

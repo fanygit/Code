@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型</title>
+    <script>
+        // 每个函数都有一个prototype属性,它默认指向Object空对象(既称为:原型对象)
+        console.log(Date.prototype, typeof Date.prototype);
+        function Func(){
+        
+        }
+        // 默认指向一个Object空对象
+        console.log(Func.prototype);
+        // 给原型对象添加属性
+        Func.prototype.test = function(){
+            console.log('test');
+        }
+        var fun = new Func();
+        fun.test();
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

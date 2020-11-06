@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型链继承</title>
+</head>
+
+<body>
+    <script>
+        // 定义父类型
+        function Supper(){
+            this.supPro = "Supper property";
+        }
+        // 给父类型添加方法
+        Supper.prototype.showSupper = function(){
+            console.log(this.supPro);
+        }
+
+        // 定义子类型
+        function Sub(){
+            this.subPro = "Sub property";
+        }
+        // 将父类型的对象赋值给子类型原型
+        Sub.prototype = new Supper();
+
+        // 给子类型添加方法
+        Sub.prototype.showSub = function(){
+            console.log(this.subPro);
+        }
+
+
+        // 创建子类型对象
+        var s1 = new Sub();
+        // console.log(s1);
+        // 通过子类型调用父类型方法
+        s1.showSupper();
+        s1.showSub();
+    </script>
+
+</body>
+
+</html>

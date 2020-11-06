@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面试题</title>
+</head>
+
+<body>
+    <script>
+        var name = "The Window";
+        var object = {
+            name: "My Object",
+            getNameFunc: function () {
+                // 这个函数是被返回了出来 并没有在对象内执行
+                // 所以 this.name 不是object中的name
+                // 
+                return function () {
+                    return this;
+                };
+                // return this.name
+            }
+        };
+        // object.getNameFunc() 调用的是对象的方法
+        // 返回的结果为函数
+        // 此时再加上()调用 不是在object中进行调用 而是 window中调用
+        // 所以结果为The Window
+        alert(object.getNameFunc()());  
+    </script>
+
+</body>
+
+</html>

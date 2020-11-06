@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE</title>
+    <script>
+        // 匿名函数自调用
+        (function(){
+            var a = 1;
+            console.log(++a);
+        })()
+        // 不会污染全局命名空间
+        var a = 4;
+        console.log(4);
+
+        (function(){
+            var a = 1;
+            function test(){
+                console.log(++a);
+            }
+            // 向外暴露一个全局函数
+            window.$ = function(){
+                return {
+                    test: test
+                }
+            }
+        })()
+        $().test();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
