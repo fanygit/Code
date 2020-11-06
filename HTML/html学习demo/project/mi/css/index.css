@@ -1,0 +1,582 @@
+/* 设置index.html 样式 */
+
+body{
+    height: 2000px;
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif
+}
+a{
+    text-decoration: none;
+}
+
+/* 设置外部容器样式 */
+.size-topbar{
+    width: auto;
+    height: 40px;
+    background-color: #333;
+    /* text-decoration: none; */
+}
+/* 设置内部容器样式 */
+.topbar{
+    /* width: 1226px; */
+    height: 40px;
+    color: #b0b0b0;
+    /* 设置导航条居中 */ 
+    /* margin: 0px auto; */
+    /* 开启定位 */
+    /* position: relative; */
+}
+/* 设置左侧导航条容器 */
+.topbar-nav{
+    font-size: 12px;
+    color: #b0b0b0;
+    position: relative;
+}
+/* 设置导航条 */
+.topbar-nav .nav-list li{
+    float: left;
+    line-height: 40px;
+    margin: 0px 3px;
+    
+}
+/* 设置左侧超链接样式 */
+.topbar-nav .nav-list .line{
+    width: 3.23px;
+    height: 15.83px;
+    color: #424242;
+    margin: 0px 3.6px;
+}
+/* 设置左侧超链接样式 */
+.topbar-nav .nav-list a{
+    color: #b0b0b0;
+}
+/* 设置鼠标移入左侧超链接改变样式 */
+.topbar-nav .nav-list a:hover{
+    color: rgb(255, 255, 255);
+}
+/* 设置父元素 select1 的相对定位 */
+.topbar-nav .nav-list .select1{
+    position: relative;
+
+}
+/* 设置鼠标移入 链接栏 下载app 显示 二维码 */
+.topbar-nav .nav-list .select1:hover .app-code{
+    display: block;
+    height: 148px;
+    /* overflow: visible; */
+}
+/* 设置 弹出式页面 二维码样式 */
+.topbar-nav .nav-list .app-code{
+    width: 124px;
+    height: 1px;
+    /* 裁剪掉溢出内容 */
+    overflow: hidden;
+    background: white;
+    line-height: 1;
+    box-shadow: 0px 0px 6px rgba(0, 0,  0, 0.5);
+    position: absolute;
+    z-index: 9999;
+    /* display: none; */
+    left: -40px;
+    top: 40px;
+    /* 设置过渡效果 */
+    transition:height  0.3s;
+}
+/* 设置弹出式页面 二维码样式 小尖角 */
+.topbar-nav .nav-list .app-code::before{
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-top: 0px;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+    border-left: 8px solid transparent;
+    position: relative;
+    top: -8px;
+    left: 55px;
+}
+/* 设置弹出式页面 图片样式 */
+.topbar-nav .nav-list .app-code img{
+    width: 90px;
+    height: 90px;
+    /* 设置图片在div中居中 */
+    display: block;
+    margin: 0px auto;
+
+}
+/* 设置弹出式页面 文本样式 */
+.topbar-nav .nav-list .app-code p{
+   
+    font-size: 14px;
+    color: #000;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  
+}
+
+
+/* 设置用户信息容器样式 */
+.user-info{
+    font-size: 12px;
+    float: right;
+    line-height: 40px;
+}
+
+/* 设置右侧列表浮动 */
+.user-info .info li{
+    float: left;
+}
+/* 设置右侧分隔符样式  */
+.user-info .info .line{
+    width: 3.23px;
+    height: 15.83px;
+    color: #424242;
+    margin: 0px 3.6px;
+}
+/* 设置右侧用户信息超链接样式 */
+.user-info .info a{
+    color: #b0b0b0;
+    margin: 0px 3px;
+}
+/* 设置鼠标移入右侧用户信息超链接 改变样式 */
+.user-info .info a:hover{
+    color: rgb(255, 255, 255);
+}
+/* 设置购物车样式 */
+.user-info .info .shopping{
+    width: 120px;
+    height: 40px;
+    background-color: rgb(66, 66, 66);
+    margin-left: 30px;
+
+    /* 设置文本居中 */
+    text-align: center;
+    position: relative;
+ 
+}
+/* 设置鼠标移入购物车 改变样式 */
+.user-info .info .shopping:hover,
+.user-info .info .shopping:hover a{
+    background-color: white;
+    color: rgb(255, 103, 0);
+    
+}
+/* 设置鼠标移入 右侧链接栏 购物车 显示 弹出式页面 */
+.user-info .info .shopping:hover .qrcode{
+    /* display: block; */
+    height: 100px;
+}
+/* 设置弹出式页面 购物车 样式 */
+.user-info .info .shopping .qrcode{
+    width: 340px;
+    height: 1px;
+    background-color:white;
+    position: absolute;
+    /* 裁剪到溢出部分 */
+    overflow: hidden;
+    top: 40px;
+    z-index: 9999;
+    right: 0px;
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+    border-top: none;
+    box-shadow: 0px 4px 5px rgba(0, 0,  0, 0.3);
+    /* display: none; */
+    /* 设置过渡效果 */
+    transition:height  0.3s;
+   
+
+}
+/* 设置弹出式页面 购物车 文本显示样式 */
+.user-info .info .shopping .qrcode p{
+    margin: 40px auto;
+    color: #000;
+}
+/* ---------------------------------------------------------------- */
+/* 设置head 容器样式 */
+.container{
+    /* float: left; */
+    /* position: relative; */
+    /* width: 1226px; */
+    height: 100px;
+    
+    /* background-color: #bfa; */
+    /* margin: 0px auto; */
+}
+
+/* 设置logo容器样式 */
+.container .logo{
+    float: left;
+    margin-top: 22px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+/* 设置logo mi样式 */
+.container .logo .mi{
+    display: block;
+    width: 55px;
+    height: 55px;
+    background-color: #FD6600;
+    background-image: url("../imgs/mi-logo.png");
+    background-position: center;
+    position: absolute;
+    left: 0;
+    transition: left 0.3s;
+    
+}
+/* 设置logo home样式  */
+.container .logo .home{
+    display: block;
+    width: 55px;
+    height: 55px;
+    background-color: #FD6600;
+    background-image: url("../imgs/mi-home.png");
+    background-position: center;
+    position: relative;
+    left: -55px;
+    transition: left 0.3s;
+}
+/* 设置鼠标移入  logo 改变mi样式  */
+.container .logo:hover .mi{
+    left: 55px;
+}
+/* 设置鼠标移入 logo 改变 home样式 */
+.container .logo:hover .home{
+    left: 0px;
+}
+
+/* 设置中间链接栏 容器 样式  */
+.nav-wrapper{
+    float: left;
+    width: 792px;
+    height: 100px;
+    /* background-color: #bfa; */
+    margin-left: 7px;
+    padding-left: 58px;
+}
+
+/* 设置中间链接栏 列表样式 */
+.nav-wrapper .nav li{
+    float: left;
+    padding-left: 20px;
+    
+    
+}
+/* 设置 中间链接栏 列表中的超链接样式*/
+.nav-wrapper .nav li a{
+    display: block;
+    color: #000;
+    font-size: 16px;
+    line-height: 100px;
+}
+/* 设置鼠标移入 链接栏 列表中  改变 超链接样式 */
+.nav-wrapper .nav li:hover a{
+    color: #FD6600;
+}
+/* 设置 左侧链接栏 绝对定位 的元素 */
+.nav-wrapper .nav .show-all-goods{
+    /* background-color: red; */
+    position: relative;
+}
+/* 设置连接栏 全部商品分类隐藏 */
+.nav-wrapper .nav .all-goods{
+    visibility: hidden;
+}
+
+/* 设置 弹出式页面 商品信息 下拉层 样式 */
+.container .goods-info{
+    height: 0px;
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+    /* border-top: 1px solid rgb(224, 224, 224); */
+    /* box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2); */
+    position: absolute;
+    z-index: 9999;
+    top: 140px;
+    left: 0px;
+    transition: height 0.3s;
+}
+/* 设置鼠标移入 显示商品信息下拉层  */
+.nav-wrapper .nav .show-goods:hover ~ .goods-info,
+.goods-info:hover{
+    height: 219px;
+    border-top: 1px solid rgb(224, 224, 224); 
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+
+    
+}
+
+/* 设置搜索按钮框容器 样式 */
+.container .search{
+    width: 294px;
+    height: 50px;
+    /* border: 1px solid rgb(176, 176, 176); */
+    float: right;
+    margin-top: 25px;  
+    /* background-color: red; */
+    box-sizing: border-box;
+}
+/* 设置 搜索框 样式 */
+.container .search-centent{
+    width: 230px;
+    height: 50px;
+    border: none;
+    padding: 0px;
+    float: left;
+    /* border: 1px solid rgb(176, 176, 176); */
+    border: 1px solid rgb(224, 224, 224);
+    padding-left: 10px;
+   
+}
+/* 设置按钮 样式 */
+.container .search-btn{
+    width: 52px;
+    height: 52px;
+    padding: 0px;
+    border: 0px;
+    float: left;
+    color: #616161;
+    background-color: white;
+    border: 1px solid rgb(224, 224, 224);
+    border-left: none;
+    font-size: 16px;
+}
+/* 设置 鼠标移入 搜索按钮框 改变 样式 */
+.container .search-centent:hover,
+.search-centent:hover + .search-btn{
+    border: 1px solid rgb(176, 176, 176);
+}
+/* 设置 鼠标移入 按钮框 取消 按钮右边框 */
+.search-centent:hover + .search-btn{
+    border-left: none;
+}
+/* 设置 鼠标点击 搜索按钮框 改变样式 */
+.container .search-centent:focus,
+.search-centent:focus + .search-btn{
+    border: 1px solid #FD6600;
+    /* border-left: none; */
+    /* 取消轮廓线 */
+    outline: none;
+}
+/*鼠标点击  去掉按钮 左边框线 */
+.search-centent:focus + .search-btn{
+    border-left: none;
+}
+/* 鼠标移入 按钮 改变 按钮 样式 */
+.search-centent + .search-btn:hover{
+    background-color: #FD6600;
+    color: white;
+}
+/* --------------------------- */
+/* 设置左侧链接栏容器 样式 */
+.nav .left-menu-wrapper {
+    width: 234px;
+    height: 460px;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 9999;
+    left: -120px;
+}
+
+/* 设置左侧菜单栏样式 */
+.nav .left-menu-wrapper .left-menu{
+    padding: 20px 0px;
+   
+}
+/* 设置左侧菜单栏 列表样式 */
+.nav .left-menu-wrapper .left-menu li{
+    float: none; 
+    padding: 0px 30px;
+}
+/* 设置鼠标移入左侧菜单栏 列表 改变样式 */
+.nav .left-menu-wrapper .left-menu li:hover{
+    background-color: #FD6600;
+}
+/* 设置左侧菜单栏 超链接样式 */
+.nav .left-menu-wrapper .left-menu li a{
+    color: white;
+    height: 42px;
+    font-size: 14px;
+    /* display: inline-block; */
+    line-height: 42px;
+}
+/* 设置左侧菜单栏 图标文字样式 */
+.nav .left-menu-wrapper .left-menu li i{
+    float: right;
+    line-height: 42px;
+}
+/* ----------------------------------------- */
+/* 设置 baneer 样式*/
+.baneer{
+    height: 460px;
+    /* background-color: #bfa; */
+    position: relative;
+    border-right: 1px solid #BBBABB;
+}
+/* 设置 baneer 图片样式 */
+.baneer .img-list li{
+    position: absolute;
+}
+/* 设置图片宽度 跟随父元素宽度 */
+.baneer .img-list li img{
+    width: 100%;
+}
+/* 切换图片 */
+.baneer .img-list li:nth-child(4){
+    z-index: 1;
+}
+
+/* 设置圆点 容器 样式 */
+.baneer .dot-wrapper{
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    z-index: 1000;
+}
+/* 设置圆点样式 */
+.baneer .dot-wrapper a{
+    float: left;
+    width: 6px;
+    height: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 0px 4px;
+}
+/* 设置鼠标移入 改变 圆点样式 */
+.baneer .dot-wrapper a:hover,
+.baneer .dot-wrapper a:nth-child(1){
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+/* 设置切换栏 */
+
+.baneer .prev-next a{
+    width: 41px;
+    height: 69px;
+    /* background-color: red; */
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    margin: auto 0px;
+    background-image: url("../imgs/icon-slides.png");
+}
+.baneer .prev-next .prev{
+    left: 234px;
+    background-position: 83px 69px;
+}
+.baneer .prev-next .prev:hover{
+    background-position: 167px 69px;
+}
+.baneer .prev-next .next{
+    right: 0;
+    background-position: 42px 69px;
+}
+.baneer .prev-next .next:hover{
+    background-position: 121px 69px;
+}
+
+/* -------------------------------------------------------- */
+/* 设置左侧快捷栏样式*/
+.top-bar{
+    width: 26px;
+    height: 206px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    /* 开启固定定位 */
+    position: fixed;
+    z-index: 9999;
+    bottom: 0px;
+    right: 50%; 
+    margin-right: -639px;
+    /* 宽度 1226px  */
+
+    /* 水平布局等式 */
+    /* left +  margin-left + border-left + padding-left + width + padding-right + border-right + margin-right + right = 窗口的宽度 */
+    /* auto + 0 + 0 + 0 + 26px + 0 + 0 + 0 + 100px = 窗口的宽度 */
+    /* auto + 0 + 0 + 0 + 26px + 0 + 0 + 0 + 50% = 窗口的宽度 */
+}
+
+/* 设置广告栏容器样式 */
+.ad-wrapper{
+    height: 170px;
+    width: 1226px;
+    margin: 0px auto;
+    /* background-color: red; */
+    margin-top: 14px;
+}
+/* 设置广告栏样式 */
+.ad-wrapper .home-channel-list{
+    width: 234px;
+    height: 100%;
+    background-color: #5f5756;
+    margin-right: 14px;
+    position: relative;
+
+}
+.ad-wrapper .home-channel-list li{
+    width: 76px;
+    height: 70px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    /* overflow: hidden; */
+    /* border: 1px solid red; */
+    position: relative;
+
+}
+.ad-wrapper .home-channel-list li::before{
+    content: '';
+    display: block;
+    width: 64px;
+    height: 1px;
+    background-color: #665e57;
+    position: absolute;
+    bottom: 87px;
+    left: 10px;
+}
+.ad-wrapper .home-channel-list li::after{
+    content: '';
+    display: block;
+    width: 1px;
+    height: 70px;
+    background-color: #665e57;
+    position: absolute;
+    bottom: 10px;
+    left: 3px;
+}
+
+.ad-wrapper .home-channel-list li:hover a{
+    color: white;
+}
+
+/* 设置广告栏字体样式 */
+.ad-wrapper .home-channel-list a{
+    color: #cfccca;
+    font-size: 12px;
+}
+.ad-wrapper .home-channel-list i{
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    margin-bottom: 3px;
+}
+.ad-wrapper li,
+.ad-wrapper .home-channel-list,
+.ad-wrapper .imgs{
+    float: left;
+}
+.ad-wrapper .imgs img{
+    vertical-align: top;
+    width: 316px;
+    margin-right: 15px;
+}
+.ad-wrapper .imgs li:nth-child(3) img{
+    margin-right: 0px;
+}

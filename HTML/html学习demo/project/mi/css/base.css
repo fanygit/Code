@@ -1,0 +1,15 @@
+/* 设置公共样式 */
+
+/* 解决高度塌陷 */
+.clearfix::before,
+.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+
+}
+/* 设置 公共样式 宽度和居中 */
+.fix{
+    width: 1226px;
+    margin: 0px auto;
+}

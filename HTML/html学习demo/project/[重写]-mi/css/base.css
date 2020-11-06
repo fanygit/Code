@@ -1,0 +1,16 @@
+/* 存放公共样式 */
+
+.clearfix::before,
+.clearfix::after{
+    content: '';
+	display: table;
+	clear: both;
+
+}
+
+/* 页面整体宽度 居中 设置*/
+
+.wfix{
+    width: 1226px;
+    margin: 0px auto;
+}
