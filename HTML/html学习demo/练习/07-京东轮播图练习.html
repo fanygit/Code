@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>京东轮播图</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<style type="text/css">
+			/*设置容器*/
+			.box1{
+				width: 590px;
+				height: 470px;
+				background-color: #000000;
+				margin: 50px auto;
+				position: relative;
+			}
+			
+			/*设置*/
+			.img_list li{
+				/*设置绝对定位后 所有的li脱离了文档流*/
+				position: absolute;
+			}
+			
+			/*设置图片按层级显示*/
+			.img_list li:nth-child(2){
+				position: absolute;
+				z-index: 1;
+			}
+			
+			/*设置图片样式*/
+			.img_list li a img{
+				width: 590px;
+				height: 470px;
+				/*从行类为块*/
+				display: block;
+			}
+			
+			/*设置导航点容器*/
+			.dot{
+		
+				width: auto;
+				height: 14.99px;
+				/*background-color: red;*/
+				position: absolute;
+				bottom: 25px;
+				left: 30px;
+				z-index: 9999;
+				
+			}
+			/*设置导航点*/
+			.dot a{
+				display: block;
+				float: left;
+				width: 9.97px;
+				height: 9.97px;
+				margin: 0px 2px;
+				background-color: rgba(255,255,255,0.4);
+				border-radius: 50%;
+				/*将背景颜色值设置到内容区，边框和内边距不在有背景颜色*/
+				background-clip: content-box;
+				border: 2px solid transparent;
+			}
+			.dot a:nth-child(1),
+			.dot a:hover{
+				background-color: #ffffff;
+				border: 2px solid rgba(255,255,255,0.4);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<ul class='img_list'>
+				<li>
+					<a href="javascript:;">
+						<img src="../images/07-1.jpg"  />
+					</a>
+				</li>
+				
+				<li>
+					<a href="javascript:;">
+						<img src="../images/07-2.jpg"  />
+					</a>
+				</li>
+				
+				<li>
+					<a href="javascript:;">
+						<img src="../images/07-3.jpg"  />
+					</a>
+				</li>
+				
+				<li>
+					<a href="javascript:;">
+						<img src="../images/07-4.jpg"  />
+					</a>
+				</li>
+				
+				<li>
+					<a href="javascript:;">
+						<img src="../images/07-5.jpg"  />
+					</a>
+				</li>
+				
+				<li>
+					<a href="javascript:;">
+						<img src="../images/07-6.jpg"  />
+					</a>
+				</li>
+				
+				<li>
+					<a href="javascript:;">
+						<img src="../images/07-7.jpg"  />
+					</a>
+				</li>
+				
+				<li>
+					<a href="javascript:;">
+						<img src="../images/07-8.jpg"  />
+					</a>
+				</li>
+			</ul>
+			<div class="dot">
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		</div>
+	</body>
+</html>

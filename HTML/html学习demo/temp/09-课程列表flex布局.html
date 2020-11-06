@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程列表flex布局</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: silver;
+        }
+
+        .wrapper{
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            box-sizing: border-box;
+            margin: 50px auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 0px 15px;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-evenly;
+        }
+
+        .wrapper .cover a img{
+            width: 100%;
+            vertical-align: top;
+            /* display: none; */
+        }
+        .wrapper .userinfo{
+            display: flex;
+            align-items: center;
+        }
+        .wrapper .title h2{
+            font-size: 18px;
+            color: #24253d;
+        }
+        .wrapper .userinfo img{
+            width: 25px;
+            height: 25px;
+        }
+        .wrapper .userinfo .username{
+            font-size: 14px;
+            color: #969393;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="cover">
+            <a href="javascript:;">
+                <img src="../images/20/cover.png">
+            </a>
+        </div>
+        <div class="title">
+            <h2>课程列表</h2>
+        </div>
+        <div class="userinfo">
+            <img src="../images/20/avatar.png">
+            <div class="username">
+                令狐冲
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bottom{
+            width: 400px;
+            height: 250px;
+            border:3px solid;
+            position: relative;
+
+        }
+        .sp1,.sp2{
+            display: block;
+            height: 0px;
+            width: 0px;
+            position: absolute;
+            font-size: 0;
+            line-height: 0;
+        }
+        .sp1{
+            
+            border-bottom: 0px;
+            border-top: 6px solid black;
+            border-right: 6px solid white;
+            border-left: 6px solid white;
+            bottom: -9px;
+            left: 40px;
+
+
+        }
+        .sp2{
+            border-bottom: 0px;
+            border-top: 3px solid white;
+            border-right: 3px solid black;
+            border-left: 3px solid black;
+            bottom: -3px;
+            left: 43px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bottom">
+        <span class="sp1"></span>
+        <span class="sp2"></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: silver;
+        }
+        .wrapper{
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border-radius: 5px;
+            margin: 50px auto;
+            
+            /* display: flex; */
+            /* flex-wrap: wrap; */
+            
+        }
+        .wrapper > a > img{
+            /* display: none; */
+            width: 85%;
+            margin: 9px 15px;
+        }
+        .wrapper h3{
+            margin:0px 0px 0px 15px;
+        } 
+        .wrapper .userinfo{
+            margin-left: 15px;
+            margin-top: 8px;
+            display: flex;
+
+        }
+        .wrapper .userinfo img{
+            width: 30px;
+            margin-top: 2px;
+        }
+        .wrapper .userinfo .username{
+            margin-top: 8px;
+            margin-left: 4px;
+            font-size: 14px;
+            color: #969393;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="javascript:;">
+            <img src="../images/20/cover.png">
+        </a>
+        <h3>摄影课程</h3>
+        <div class="userinfo">
+            <img src="../images/20/avatar.png">
+            <div class="username">
+                令狐冲
+            </div>
+        </div>
+    </div>
+</body>
+</html>

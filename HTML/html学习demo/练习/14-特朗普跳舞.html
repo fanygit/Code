@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特朗普全方位跳舞</title>
+    <style>
+        .box1{
+            width: 600px;
+            height: 700px;
+            background-color: silver;
+            overflow: hidden;
+        }
+        .box1 div{
+            width: 100px;
+            height: 100px;
+            margin: 0px auto;
+            margin-top: 50px;
+            background-image: url("../images/14/trump_run.png");
+            /* float: left; */
+        }
+        .box1 .box2{
+            background-position: 0px 0px;
+            animation: run1 1s steps(6) infinite;
+        }
+        .box1 .box3{
+            background-position: 0px 100px;
+            animation: run2 1s steps(6) infinite;
+        }
+        .box1 .box4{
+            background-position: 0px 200px;
+            animation: run3 1s steps(6) infinite;
+        }
+        .box1 .box5{
+            background-position: 0px 300px;
+            animation: run4 1s steps(6) infinite;
+        }
+        @keyframes run1{
+            from{
+                background-position: 0px 0px ;
+            }
+            to{
+                background-position: 600px 0px;
+            }
+        }
+        @keyframes run2{
+            from{
+                background-position: 0px 100px ;
+            }
+            to{
+                background-position: 600px 100px;
+            }
+        }
+        @keyframes run3{
+            from{
+                background-position: 0px 200px ;
+            }
+            to{
+                background-position: 600px 200px;
+            }
+        }
+        @keyframes run4{
+            from{
+                background-position: 0px 300px ;
+            }
+            to{
+                background-position: 600px 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+    </div>
+    
+</body>
+</html>

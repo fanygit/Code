@@ -1,0 +1,129 @@
+html {
+  font-size: 5.33333333vw;
+  background-color: #EFF0F4;
+}
+.w,
+.top-bar,
+.banner,
+.menu,
+.course-list {
+  width: 17.325rem;
+  margin: 0px auto;
+}
+a {
+  text-decoration: none;
+}
+.top-bar {
+  height: 4.375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar .menu-btn a {
+  color: #999999;
+}
+.top-bar .title {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.top-bar .title a {
+  color: #000;
+}
+.top-bar .search a {
+  color: #999999;
+}
+.banner img {
+  width: 100%;
+  vertical-align: top;
+}
+.menu {
+  height: 8.225rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: space-evenly;
+}
+.menu a {
+  width: 8.175rem;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  color: white;
+  background-color: #bfa;
+  border-radius: 0.25rem;
+}
+.menu i {
+  color: white;
+  margin: 0 0.5rem 0 0.95rem;
+}
+.menu .course {
+  background-color: #F97053;
+}
+.menu .star {
+  background-color: #CD6EFE;
+}
+.menu .sub {
+  background-color: #FE4479;
+}
+.menu .download {
+  background-color: #1BC4FB;
+}
+.course-list {
+  height: 9.85rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+.course-list .title {
+  display: flex;
+  justify-content: space-between;
+}
+.course-list .title h2 {
+  font-size: 0.825rem;
+  font-weight: 800;
+  border-left: 2px solid blue;
+  padding-left: 4px;
+}
+.course-list .title a {
+  color: #656565;
+  font-size: 0.7rem;
+}
+.item-list {
+  display: flex;
+  overflow: auto;
+  width: 18rem;
+}
+.item {
+  flex: none;
+  width: 8rem;
+  height: 8.1rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 0 0.55rem;
+  margin-right: 0.6rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+.item .cover img {
+  width: 100%;
+  vertical-align: top;
+}
+.item .title {
+  font-size: 0.8rem;
+  color: #24253d;
+}
+.item .userinfo {
+  display: flex;
+  align-items: center;
+}
+.item .userinfo img {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.item .userinfo .username {
+  font-size: 0.6rem;
+  color: #969393;
+  margin-left: 6px;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入外部重置样式表 -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- 引入外部图标文字 -->
+    <link rel="stylesheet" href="../_font&background/css/all.css">
+    <title>电影卡片</title>
+    <style>
+        /* 设置外部容器样式 */
+        .outer {
+            width: 240px;
+            height: auto;
+            margin: 50px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+        }
+
+        /* 设图片容器样式 */
+        .img-warpper {
+            width: 240px;
+            height: 158px;
+            /* border: 1px solid red; */
+        }
+
+        /* 设置内容容器 标题样式 */
+        .info .title {
+            color: #717171;
+            font-size: 18px;
+            /* font-family: "Myriad Pro"; */
+            margin: 13px 0px;
+            padding: 0px 0px 0px 18px;
+
+        }
+
+        /* 设置内容容器 副标题样式 */
+        .info .category {
+            color: #b4b4b4;
+            font-size: 14px;
+            margin: 13px 0px;
+            padding: 0px 0px 0px 20px;
+        }
+
+        /* 设置 内容容器 图标文字样式 */
+        .info .fas {
+            /* 设置右间距 */
+            margin: 0px 7px 0px 0px;
+        }
+
+        /* 设置内容容器 内容样式 */
+        .info .centent {
+            color: #acaaaa;
+            font-size: 12px;
+            margin: 24px 21px;
+            /* margin-top: 24px; */
+            line-height: 18px;
+
+
+        }
+
+        /* 设置 评分与分享容器 评分 样式 */
+        .star-warpper {
+            width: 240px;
+            height: 48px;
+            border-top: 1px solid #dddddd;
+            line-height: 48px;
+            color: #dddddd;
+        }
+
+        /* 设置评分 外边距 */
+        .star-warpper .star {
+            margin-left: 16px;
+        }
+
+        /* 点亮评分 */
+        .star-warpper .star .highlight{
+            color: #b9cb41;
+        }
+
+        /* 设置评论 列表 */
+        .star-warpper .star li {
+            margin-left: 3px;
+            float: left;
+
+        }
+
+        /* 设置分享图标外边距 */
+        .star-warpper .qq {
+            margin-right: 33px;
+        }
+
+        /* 设置分享图标 */
+        .star-warpper .qq li {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 外部容器 -->
+    <div class="outer">
+        <!-- 图片容器 -->
+        <div class="img-warpper">
+            <img src="../images/bg-2.jpg" alt="">
+        </div>
+        <!-- 内容容器 -->
+        <div class="info">
+            <h2 class="title">Animation films</h2>
+            <h3 class="category"><i class='fas fa-map-marker-alt'></i>Animation</h3>
+            <div class="centent">
+                <span>Lorem Ipsum is simply dummy text of the printing & typesetting industry. </span>
+            </div>
+
+        </div>
+        <!-- 评分与分享容器 -->
+        <div class="star-warpper">
+            <!-- 评分 -->
+            <ul class="star">
+                <li class="highlight"><i class="fas fa-star"></i></li>
+                <li class="highlight"><i class="fas fa-star"></i></li>
+                <li><i class="fas fa-star"></i></li>
+                <li><i class="fas fa-star"></i></li>
+            </ul>
+            <!-- 分享 -->
+            <ul class="qq">
+                <li><i class="fab fa-qq"></i></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

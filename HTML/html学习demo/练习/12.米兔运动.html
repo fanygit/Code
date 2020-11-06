@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>米兔行走练习</title>
+    <style>
+        .box1{
+            width: 1000px;
+            height: 271px;
+            /* background-color: #bfa; */
+            position: relative;
+        }
+        .box2{
+            width: 132px;
+            height: 271px;
+            background-image: url("../images/12/bigtap-mitu-queue-big.png"); 
+            /* margin: 0px auto; */
+            background-position: 396px 0px;
+            
+            position: absolute;
+            left: 0px;
+            transition-property: background-position,left ;
+            transition-duration:0.5s,0.5s;
+            transition-timing-function: steps(3);
+        }
+        
+        .box1:hover .box2{
+            background-position: 0px 0px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+        </div>
+    </div>
+    
+</body>
+</html>

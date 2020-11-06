@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入重置样式表 -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- 引入图标文字字符集 -->
+    <link rel="stylesheet" href="../_font&background/css/all.css">
+    <title>京东导航栏</title>
+    <style>
+        body {
+            background-color: #F4F4F4;
+            font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+        }
+
+        /* 设置外部容器 */
+        .top-bar-warpper {
+            width: 100%;
+            height: 30px;
+            /* 设置文本居中 */
+            line-height: 30px;
+            /* 设置边框 */
+            border-bottom: 1px solid #DDDDDD;
+            background-color: #E3E4E5;
+        }
+
+        /* 设置内部容器 */
+        .top-bar {
+            width: 1190px;
+            height: 30px;
+            /* 设置居中显示 */
+            margin: 0px auto;
+        }
+
+        /* 设置localtion 左侧 */
+        .localtion {
+            width: 56px;
+            height: 30px;
+            float: left;
+            /* position: absolute; */
+        }
+
+        /* 设置 左侧图标文字样式 */
+        .localtion .fas {
+            color: #F10215;
+            font-size: 13px;
+        }
+
+        /* 设置左侧 链接栏 城市位置样式 */
+        .current-position {
+            padding: 0px 0px 0px 6px;
+            border: 1px solid transparent;
+            position: relative;
+            z-index: 9999;
+
+        }
+
+        /* 设置鼠标移入左侧 链接栏 城市位置后的样式 */
+        .localtion:hover .current-position {
+            height: 30px;
+            background-color: white;
+            border: 1px solid rgb(204, 204, 204);
+            border-bottom: none;
+        }
+
+        /*  设置 弹出式页面 城市列表 样式 */
+        .localtion .city-list {
+            width: 386px;
+            height: 550px;
+            background-color: white;
+            display: none;
+            /* 设置边框 */
+            border: 1px solid #DDDDDD;
+            /* 设置阴影 */
+            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+            /* 设置定位 */
+            position: absolute;
+            z-index: 999;
+            top: 30px;
+        }
+
+        /* 设置鼠标移入 链接栏 城市位置 弹出式页面显示 */
+        .localtion:hover .city-list {
+            display: block;
+        }
+
+
+        /* 设置超链接、图标文字、span样式 */
+        .top-bar a,
+        .top-bar i,
+        .top-bar span {
+            text-decoration: none;
+            color: #999999;
+        }
+
+        /* 设置输入移入超链接变色 */
+        .top-bar a:hover,
+        .shoatcut .highlight {
+            color: #F10215;
+        }
+
+        /* 设置右侧 shoatcut */
+        .shoatcut {
+            float: right;
+            position: relative;
+
+        }
+
+        /* 设置右侧 链接栏 我的京东 弹出式页面样式 */
+        .shoatcut .select1 .myjd {
+            width: 280px;
+            height: 192px;
+            /* 移动元素位置 */
+            margin-left: -4px;
+            background-color: white;
+            border: 1px solid #DDDDDD;
+            /* border-top: 1px solid red;  */
+            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+            /* 相对于 父元素 select  开启定位 */
+            position: absolute;
+            z-index: -1;
+            top: 29px;
+            display: none;
+
+
+        }
+
+        /* 鼠标移入链接栏显示 我的京东 弹出式页面 */
+        .shoatcut .select1:hover .myjd {
+            display: block;
+        }
+
+        /* 设置 链接栏 我的京东 样式 */
+        .shoatcut .select1 {
+            height: 30px;
+            padding: 0px 3px;
+            border: 1px solid transparent;
+
+            /* 相对于 .shoatcut 开启定位 */
+            position: relative;
+            /* z-index: 1; */
+        }
+
+        /* 设置移入 链接栏 我的京东 样式 */
+        .select1:hover {
+            border: 1px solid rgb(204, 204, 204);
+            border-bottom: none;
+            background-color: white;
+
+        }
+
+        /* 设置 弹出式页面 企业采购 */
+        .select2 .ent-p {
+            width: 150px;
+            height: 109px;
+            background-color: white;
+            display: none;
+            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+            border: 1px solid #DDDDDD;
+
+            margin-left: -4px;
+            /* 相对于父元素 .select2 开启绝对定位 */
+            position: absolute;
+            z-index: -1;
+            top: 29px;
+        }
+
+        /* 设置鼠标移入 链接栏 企业采购 显示 弹出式页面  */
+        .select2:hover .ent-p {
+            display: block;
+        }
+
+        /* 设置 链接栏 企业采购样式 */
+        .shoatcut .select2 {
+            height: 30px;
+            padding: 0px 3px;
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        /* 设置鼠标移入链接栏 企业采购 改变样式 */
+        .shoatcut .select2:hover {
+            background-color: white;
+            border: 1px solid rgb(204, 204, 204);
+            border-bottom: none;
+
+        }
+
+        /* 设置 弹出式页面 客户服务样式 */
+        .shoatcut .c-server {
+            width: 173px;
+            height: 200px;
+            background-color: white;
+            /* 设置边框 */
+            border: 1px solid #DDDDDD;
+            /* 设置阴影 */
+            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+            /* 设置位置 */
+            margin-left: -112px;
+            position: absolute;
+            top: 29px;
+            z-index: -1;
+            display: none;
+        }
+
+        /* 设置 鼠标移入 链接栏 客服服务 显示 弹出式页面 */
+        .shoatcut .select3:hover .c-server {
+            display: block;
+        }
+
+        /* 设置鼠标移入 链接栏 客服服务 改变样式 */
+        .shoatcut .select3:hover {
+            background-color: white;
+            border: 1px solid rgb(204, 204, 204);
+            /* 取消下边框 */
+            border-bottom: none;
+
+        }
+
+        /* 设置链接栏 客服服务 select3 样式 */
+        .shoatcut .select3 {
+            height: 30px;
+            padding: 0px 3px;
+            border: 1px solid transparent;
+            /* 开启定位 */
+            position: relative;
+        }
+
+        /* 设置 弹出式页面 网站导航 样式*/
+        .select4 .s-navi {
+            width: 1190px;
+            height: 212px;
+            background-color: white;
+            /* 设置显示位置 */
+            margin-left: -1050px;
+            /* 开启定位 */
+            position: absolute;
+            /* 设置层级 */
+            z-index: -1;
+            /* 设置绝对定位位置 */
+            top: 29px;
+            /* 设置边框 */
+            border: 1px solid #DDDDDD;
+            /* 设置阴影 */
+            box-shadow: 0px 1px 0px rgba(0, 0, o, 0.2);
+            /* 隐藏 */
+            display: none;
+        }
+
+        /* 设置鼠标移入 链接栏 网站导航 显示 弹出式页面 */
+        .shoatcut .select4:hover .s-navi {
+            /* 显示 */
+            display: block;
+        }
+
+        /* 设置链接栏 网站导航 样式 */
+        .shoatcut .select4 {
+            border: 1px solid transparent;
+            padding: 0px 3px;
+        }
+
+        /* 设置鼠标移入 链接栏 网站导航 改变样式 */
+        .shoatcut .select4:hover {
+            background-color: white;
+            border: 1px solid rgb(204, 204, 204);
+            /* 去掉下边框 */
+            border-bottom: none;
+        }
+
+        /* 设置弹出式页面 手机京东 样式 */
+        .select5 .box1 {
+            width: 229px;
+            height: 513px;
+            background-color: white;
+            /* 开启定位 */
+            position: absolute;
+            /* 设置显示位置 */
+            margin-left: -150px;
+            /* 设置隐藏 */
+            display: none;
+            /* 设置边框 */
+            border: 1px solid #ddd;
+            /* 设置阴影 */
+            box-shadow: 0px 1px 0px rgba(0, 0, o, 0.3)
+        }
+
+        /* 设置弹出式页面 的小角标 */
+        .box1 .sp1 {
+            display: block;
+            width: 0px;
+            height: 0px;
+            border-top: 0px;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid white;
+            border-left: 5px solid transparent;
+            position: absolute;
+            top: -5px;
+            left: 180px;
+        }
+
+        /* 设置鼠标移入 链接栏 手机京东 显示 弹出式页面 */
+        .shoatcut .select5:hover .box1 {
+            display: block;
+        }
+
+        /* 设置shoatcut li */
+        .shoatcut li {
+            float: left;
+            margin: 0px 8px 0px;
+            /* padding: 0px 20px 0px 7px; */
+        }
+
+        /* 设置分隔符 */
+        .shoatcut .line {
+            width: 1px;
+            height: 10px;
+            background-color: rgb(168, 168, 168);
+            margin: 11px 5px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 外部容器 -->
+    <div class="top-bar-warpper">
+        <!-- 内部容器 -->
+        <div class="top-bar">
+            <!-- 左侧localtion  -->
+            <div class="localtion">
+                <!-- 当前位置 -->
+                <div class="current-position">
+                    <!-- 文字图标 -->
+                    <i class='fas fa-map-marker-alt'></i>
+                    <a href="javascript:;">重庆</a>
+                </div>
+                <!-- 弹出式页面 -->
+                <div class="city-list">
+
+                </div>
+            </div>
+
+            <!-- 右侧导航栏 -->
+            <ul class="shoatcut">
+                <li>
+                    <a href="javascript:;">你好,请登录</a>&nbsp;
+                    <a class="highlight" href="javascript:;">免费注册</a>
+                </li>
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">我的订单</a>
+                </li>
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li class="select1">
+                    <a href="javascript:;">我的京东</a>
+                    <i class="fas fa-angle-down "></i>
+                    <!-- 弹出式页面 我的京东 -->
+                    <div class="myjd">
+                    </div>
+
+                </li>
+
+
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">京东会员</a>
+                </li>
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li class="select2">
+                    <a class="highlight" href="javascript:;">企业采购</a>
+                    <i class="fas fa-angle-down"></i>
+                    <!-- 弹出式页面 企业采购 -->
+                    <div class="ent-p">
+                    </div>
+                </li>
+
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li class="select3">
+                    <span>客户服务</span>
+                    <i class="fas fa-angle-down"></i>
+                    <!-- 弹出式页面 客服服务 -->
+                    <div class="c-server"></div>
+                </li>
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li class="select4">
+                    <span>网站导航</span>
+                    <i class="fas fa-angle-down"></i>
+                    <!-- 弹出式页面 网站导航 -->
+                    <div class="s-navi">
+                    </div>
+                </li>
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li class="select5">
+                    <span>手机京东</span>
+                    <!-- 弹出式页面  -->
+                    <div class="box1">
+                        <span class="sp1"></span>
+
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时钟旋转动画2</title>
+    <style>
+        .wrapper{
+            width: 500px;
+            height: 500px;
+            /* background-color: silver; */
+            /* border: 5px solid black; */
+            background-image: url("../images/16/bg3.jpg");
+            background-size: contain;
+            border-radius: 50%;
+            margin: 200px auto;
+            position: relative;
+        }
+        .wrapper > div{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+        }
+        .hour-wrapper{
+            width: 250px;
+            height: 250px;
+            /* background-color: red; */
+            animation: run 21600s linear infinite;
+        }
+        .hour-wrapper .hour{
+            width: 6px;
+            height: 50%;
+            background-color: black;
+            margin: 0 auto;
+        }
+        .min-wrapper{
+            width: 310px;
+            height: 310px;
+            /* background-color: red; */
+            animation:run 360s  steps(60) infinite;
+        }
+        .min-wrapper .min{
+            width: 4px;
+            height: 50%;
+            background-color: chocolate;
+            margin: 0 auto;
+            
+        }
+        .sec-wrapper{
+            width: 400px;
+            height: 400px;
+            /* background-color: red; */
+            animation:run 6s steps(60) infinite;
+        }
+        .sec-wrapper .sec{
+            width: 2px;
+            height: 50%;
+            background-color: black;
+            margin: 0 auto;
+            
+        }
+
+        /*  */
+        @keyframes run{
+            from{
+                transform: rotateZ(0deg);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="hour-wrapper">
+            <div class="hour"></div>
+        </div>
+        <div class="min-wrapper">
+            <div class="min"></div>
+        </div>
+        <div class="sec-wrapper">
+            <div class="sec"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雪碧图方式显示背景图片</title>
+    <style>
+        a:link{
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-image: url("../images/09/btn.png");
+            /* 定位背景图片位置 */
+            background-position: 0 0;
+        }
+        a:hover{
+            width: 200px;
+            height: 200px;
+            background-image: url("../images/09/btn.png");
+            background-position: -200px 0;
+        }
+        a:active{
+            width: 200px;
+            height: 200px;
+            background-image: url("../images/09/btn.png");
+            background-position: -400px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:;"></a>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立方体</title>
+    <style>
+        body{
+            /* 设置视距 */
+            perspective: 800px;
+        }
+        .wrapper{
+            width: 200px;
+            height: 200px;
+            /* background-color: #bfa; */
+            margin: 200px auto;
+            position: relative;
+            /* 设置3d变形效果 */
+            transform-style: preserve-3d; 
+            /* transform: rotateY(45deg) rotateX(45deg); */
+            animation: run 20s linear infinite;
+        }
+        .wrapper img{
+            vertical-align: top;
+            position: absolute;
+            opacity: 0.9;
+        }
+        .wrapper img:nth-child(1){
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .wrapper img:nth-child(2){
+            transform: rotateX(-180deg) rotateZ(180deg) translateZ(100px);
+        }
+        .wrapper img:nth-child(3){
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .wrapper img:nth-child(4){
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .wrapper img:nth-child(5){
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .wrapper img:nth-child(6){
+            transform: rotateY(0deg) translateZ(100px);
+        }
+        @keyframes run{
+            from{
+                transform: rotateY(360deg) rotateX(360deg);
+            }
+            to{
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="../images/17/1.jpg">
+        <img src="../images/17/2.jpg">
+        <img src="../images/17/3.jpg">
+        <img src="../images/17/4.jpg">
+        <img src="../images/17/5.jpg">
+        <img src="../images/17/6.jpg">
+    </div>
+</body>
+</html>
