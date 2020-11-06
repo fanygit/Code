@@ -1,0 +1,10 @@
+.border(@b-w:40px,@b-c:green){
+    width: 0px;
+    height: 0px;
+    border-width: @b-w;
+    border-style: solid;
+    border-color: transparent @b-c transparent transparent;
+}
+.triangle{
+    .border(40px,pink);
+}

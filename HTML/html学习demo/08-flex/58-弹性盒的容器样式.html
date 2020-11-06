@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒的容器样式</title>
+    <style>
+        .wrapper{
+            width: 700px;
+            height: 500px;
+            border: 5px solid red;
+            /* 设置为弹性容器 */
+            display: flex;
+            /* 设置弹性容器中的元素排列方式
+                flex-direction
+                    可选值
+                        row 默认值 元素水平居中排列 自左向右
+                        row-resverse 元素水平居中排列 自右向左
+                        column 元素垂直居中 自上而下
+                        column-resverse 元素垂直居中 自下而上
+
+             */
+            /* flex-direction: column-reverse; */
+
+            /* 设置弹性元素在弹性容器中是否自动换行
+                flex-wrap
+                    可选值：
+                    nowrap 默认值 不自动换行
+                    wrap 自动换行
+                    wrap-reverse 元素沿着辅轴反方向换行
+             */
+            flex-wrap: wrap;
+
+            /* 设置弹性元素如何分配弹性容器中主轴的空白空间 
+                justify-content
+                    可选值：
+                        flex-start 默认值 元素沿着主轴起边排列
+                        flex-end 元素沿着主轴终边排列
+                        center 元素沿着主轴居中排列
+                        space-evenly 空白区域分散到元素间 (平均分散到元素间)
+                        space-between 空白区域分散到元素间 （两侧不分散 中间分散）
+                        space-around   空白区域分散到元素间 (两侧分散比例小 中间分散比例大) 
+
+
+                        
+            */
+
+            justify-content: space-evenly;
+            /* 设置元素在辅轴上如何对齐、元素间的关系
+                align-items 
+                    可选值：
+                        seretch 默认值  将元素的长度设置为相同的值
+                        flex-start 元素不会拉升 元素沿着辅轴起边对齐
+                        flex-end 元素沿着辅轴终边对齐
+                        center 元素沿着居中对齐
+                        baseline 元素沿着基线对齐
+             */
+
+
+            /* align-items: center; */
+            
+            /* 设置弹性元素在弹性容器中空白空间辅轴的分配方式 
+                align-content
+                    可选值：
+                        flex-start 元素沿着辅轴起边对齐
+                        flex-end 元素沿着辅轴终边对齐
+                        center 元素沿着辅轴居中排列
+                        space-around   空白区域分散到元素 （两侧分布比例小 中间分布比例大）
+                        space-between 空白区域分散到元素间 （两侧不分布 中间分布）
+                        space-evenly 空白区域分散到元素间（平均分布）
+
+
+            */
+            align-content: space-around;
+
+
+        }
+        .wrapper div{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        .wrapper div:nth-child(2){
+            background-color: blue;
+        }
+        .wrapper div:nth-child(3){
+            background-color: orange;
+        }
+        .wrapper div:nth-child(4){
+            background-color: pink;
+        }
+        .wrapper div:nth-child(5){
+            background-color: gold;
+        }
+        .wrapper div:nth-child(6){
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+    </div>
+    
+</body>
+</html>

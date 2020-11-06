@@ -1,0 +1,25 @@
+.wrapper{
+    width: 500px;
+    height: 600px;
+    border: 5px solid #bfa;
+    
+    .box1{
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+    .box2{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    // 通过& 表示当前元素的父元素 
+    &:hover .box2{
+        background-color: green;
+    }
+    // 设置父元素 鼠标移入变色
+    &:hover{
+        background-color: #bfa;
+    }
+
+}

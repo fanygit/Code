@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            /* 去掉li 项目符合 */
+            list-style: none;
+            
+        }
+        ul{
+            width: 800px;
+            height: 300px;
+            background-color: #bfa;
+            /* 设置弹性盒容器
+                display: flex
+            */
+            display: flex;
+            /* 设置弹性容器中元素的排列方式 
+                flex-direction
+                    可选值
+                        row 弹性容器中元素水平排列 自左向右
+                        row-reverse 弹性容器中元素反向水平排列 自右向左
+                        column 弹性元素纵向排列 自上而下
+                        columns-reverse 弹性元素反向纵向排列 自下而上
+            */
+            flex-direction: row;
+            
+            
+        
+
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            font-size: 24px;
+            text-align: center;
+            line-height: 100px;
+            /* 指定弹性元素的伸展的系数 (给弹性元素设置)
+                flex-grow 
+            */
+            flex-grow: 1;
+            /* flex-shrink: 1; */
+            /* 设置弹性容器的收缩系数 */
+        }
+        li:nth-child(2){
+            background-color: pink;
+            flex-grow: 2;
+        }
+        li:nth-child(3){
+            background-color: green;
+            flex-grow: 3;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>

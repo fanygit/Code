@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z轴平移</title>
+    <style>
+        body{
+            perspective: 800px;
+            border: 1px solid red;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 200px auto;
+            
+            /* 
+            设置z轴平移前 需要设置 网页的视距
+            perspective
+            设置z轴平移 
+            transform: translateZ()
+            */
+            transition: all 0.3s;
+            
+        }
+        body:hover .box1{
+            transform: translateZ(300px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+
+    </div>
+</body>
+</html>

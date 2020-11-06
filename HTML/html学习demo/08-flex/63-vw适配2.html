@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vw适配</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /* 创建一个 移动端 48 x 35 像素的容器 */
+        .wrapper{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: space-evenly;
+        }
+        /* 100vw = 一个视口的宽度 */
+        /* 一般的视口宽度为：750 1125 */
+        /* 100vw = 750px(设计图中的像素) */
+        /* 1px = 0.1333333333333333vw */
+        
+        .box1{
+            width: 24vw;
+            height: 100px;
+            background-color: #bfa;
+        }
+        .box2{
+            width: 24vw;
+            height: 100px;
+            background-color: #bfa;
+        }
+        .box3{
+            width: 24vw;
+            height: 100px;
+            background-color: #bfa;
+        }
+        .box4{
+            width: 24vw;
+            height: 100px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

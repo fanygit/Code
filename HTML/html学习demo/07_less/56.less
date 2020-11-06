@@ -1,0 +1,28 @@
+.border(){
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+}
+.border(top,@b-w,@b-c){
+    .border();
+    border-width: @b-w;
+    border-color: transparent transparent @b-c transparent;
+}
+.border(bottom,@b-w,@b-c){
+    .border();
+    border-width: @b-w;
+    border-color: @b-c transparent transparent  transparent;
+}
+.border(right,@b-w,@b-c){
+    .border();
+    border-width: @b-w;
+    border-color: transparent  transparent  transparent @b-c;
+}
+.border(left,@b-w,@b-c){
+    .border();
+    border-width: @b-wht;
+    border-color: transparent @b-c transparent  transparent ;
+}
+.triangle{
+    .border(right, 40px, red);
+}

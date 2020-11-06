@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡效果</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .box1{
+            width: 600px;
+            height: 600px;
+            background: silver;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /* margin-bottom: 200px; */
+            /* transition: all 0.3s; */
+            /* transition-property 设置要执行过渡的属性*/
+            /* transition-property: width,height,background-color; */
+            /* transition-duration 设置过渡效果的持续时间 */
+            /* transition-duration: 0.3s,2s,3s; */
+            position: absolute;
+            left: 0px;
+            /* transition-property: left;
+            transition-duration: 2s; */
+            /* 设置过渡的途中的效果 */
+            /* transition-timing-function: ease-out; */
+            /* 用时序函数来指定途中的效果 */
+            /* transition-timing-function: cubic-bezier(.75,.47,1,-0.55); */
+            transition: 3s cubic-bezier(.75,.47,1,-0.55) ;
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 200px;
+            position: absolute;
+            left: 0;
+            /* transition-property: left;
+            transition-duration: 3s;
+            /* 设置分布执行过渡效果 */
+            /* transition-timing-function: steps(3, end ); */
+            /* 设置过渡效果的延迟 */
+            /* transition-delay: 0.5s; */
+            /* 简写属性 */
+            transition: 3s steps(3, end) 0.5s;
+            
+        }
+        .box1:hover .box2,
+        .box1:hover .box3{
+            /* width: 200px; */
+            /* height: 200px; */
+            /* background-color: pink; */
+            left: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    
+</body>
+</html>

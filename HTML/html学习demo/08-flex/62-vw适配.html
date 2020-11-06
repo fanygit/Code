@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vw适配</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html{
+            font: 5.3333vw;
+            /* 创建一个48 x 35 大小的像素
+                100vw = 750px (设计图中的像素)
+                ?vw = 1px
+                0.1333333vw = 1px
+                48px(设计图中的像素) = 6.399984vw
+                35px = 4.6vw 
+                0.133333333vw = 1px 
+                5.333333vw = 40px
+                5.3333vw = 40px
+                rem
+                    -   1 rem = 1 html的字体大小
+                        0.13333333 = 1px
+                        5.33333vw = 40px
+                        1 rem = 5.3333vw = 40px
+                        1.2 rem = 48px
+                        0.875 rem = 35px
+
+                直接转换
+                    0.1333333vw = 1px
+                    48x0.133333vw = 48px
+                    35x0.133333vw = 35px
+
+                通过字体转换
+                    1rem = 1html字体大小
+                    font: 5.3333vw
+                    1rem = 5.333vw = 40px
+                    48/40 rem = 48px
+                    35/40 rem = 35px
+
+
+
+            */
+        }
+        .box1{
+            /* 创建一个48 x 35 大小的像素 
+                把像素换算 成 rem
+            */
+            width: 1.2rem;
+            height: 0.875rem;
+            background-color: #bfa;
+            /* 
+                rem
+                    - 1 rem = 1 html的字体大小
+             */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+@color:#bfa;
+@wh: 200px;
+.box1{
+   
+    width: @wh;
+    height: @wh;
+    border: 1px solid red;
+    .box2{
+        width: @wh;
+        height: @wh;
+        background-color: @color;
+    }
+    .box3{
+        width: @wh;
+        height: @wh;
+        background-color: red;
+    }
+    @c:box6;
+    .@{c}{
+        width: @wh;
+        background-image: url("../@{c}/imgs/1.png");
+    
+    }
+}

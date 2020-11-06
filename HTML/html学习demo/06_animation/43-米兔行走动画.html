@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>米兔行走动画</title>
+    <style>
+        .box1{
+            width: 132px;
+            height: 271px;
+            background-image: url("../images/12/bigtap-mitu-queue-big.png");
+            animation-name: test;
+            animation-duration: 0.3s;
+            animation-timing-function: steps(3);
+            /* animation-direction: reverse; */
+            animation-iteration-count: infinite;
+            position: absolute;
+            left: 0;
+            transition: left 6s;
+            
+        }
+        .box2:hover .box1{
+            left: 1500px;
+        }
+        .box3{
+            width: 132px;
+            height: 271px;
+            background-image: url("../images/12/bigtap-mitu-queue-big.png");
+            animation-name: test;
+            animation-duration: 0.2s;
+            animation-timing-function: steps(3);
+            /* animation-direction: reverse; */
+            animation-iteration-count: infinite;
+            position: absolute;
+            left: 0;
+            transition: left 3s;
+            
+        }
+        .box4:hover .box3{
+            left: 1500px;
+        }
+        /* 设置鼠标移入 .box1 暂停动画 */
+        .box3:hover{
+            animation-play-state: paused;
+        }
+        @keyframes test{
+            from{
+                background-position: 0px 0px;
+
+            }
+            to{
+                background-position: 396px 0px;
+            }
+        }
+        .box2{
+            width: 1500px;
+            height: 271px;
+            border-bottom: 1px solid #000;
+            position: relative;
+        }
+        .box4{
+            width: 1500px;
+            height: 271px;
+            border-bottom: 1px solid #000;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box2">
+        <div class="box1">
+
+        </div>
+    </div>
+    <div class="box4">
+        <div class="box3">
+
+        </div>
+    </div>
+    
+</body>
+</html>

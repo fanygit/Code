@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒的容器样式</title>
+    <style>
+        .wrapper{
+            width: 700px;
+            height: 500px;
+            border: 5px solid red;
+            display: flex;
+            /* 设置弹性容器中的弹性元素 不换行 */
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-content: space-evenly;
+
+        }
+        .wrapper div{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            text-align: center;
+            line-height: 200px;
+            /* 设置弹性元素的伸展的系数 
+                flex-grow 
+                    可选值：
+                        1 2 3
+             */
+            /* flex-grow: 1; */
+
+            /* 设置弹性元素的收缩系数
+                flex-shrink
+             */
+             /* flex-shrink: 1; */
+             /* 设置元素的排列顺序 
+                order
+                */
+        }
+        .wrapper div:nth-child(1){
+            background-color: #bfa;
+            order: 6;
+
+        }
+        .wrapper div:nth-child(2){
+            background-color: blue;
+            /* flex-grow:2; */
+            /* flex-shrink: 1; */
+            /* order: 1; */
+            order: 5;
+        }
+        .wrapper div:nth-child(3){
+            background-color: orange;
+            /* flex-grow: 3; */
+            /* flex-shrink: 2; */
+            order: 4;
+        }
+        .wrapper div:nth-child(4){
+            background-color: pink;
+            /* flex-shrink: 3; */
+            order: 3;
+        }
+        .wrapper div:nth-child(5){
+            background-color: gold;
+            /* flex-shrink: 4; */
+            order: 2;
+
+        }
+        .wrapper div:nth-child(6){
+            background-color: yellow;
+            /* flex-shrink: 5; */
+            order: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+    </div>
+    
+</body>
+</html>

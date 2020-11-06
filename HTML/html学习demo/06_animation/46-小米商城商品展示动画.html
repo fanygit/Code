@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城商品展示动画</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .wrapper{
+            width: 650px;
+            height: 650px;
+            background-color: rgb(231, 229, 229);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 8px;
+            
+        }
+        .wrapper div{
+            width: 200px;
+            height: 300px;
+            background-color: white;
+            float: left;
+            margin: 10px 8px;
+            transition: all 0.3s;
+            
+            
+        }
+        .wrapper div:hover{
+            transform: translateY(-4px);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+    </div>
+</body>
+</html>

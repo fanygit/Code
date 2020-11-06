@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格的css样式</title>
+    <style>
+        table{
+            /* 设置宽度 单元格会随宽度的改变而自动改变 */
+            width: 50%;
+            /* 设置边框 */
+            border: 1px solid black;
+            /* 指定表格之间的距离 */
+            /* border-spacing: 0px; */
+            /* 设置边框合并 */
+            border-collapse: collapse;
+        }
+        td{
+            /* 给单元格设置边框 */
+            border: 1px solid black;
+        }
+        /* 设置隔行变色 */
+        tbody > tr:nth-child(even){
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>排名</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>地址</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>孙悟空</td>
+                <td>20</td>
+                <td>花果山</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>猪八戒</td>
+                <td>20</td>
+                <td>高老庄</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>沙和尚</td>
+                <td>28</td>
+                <td>流沙河</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>唐僧</td>
+                <td>20</td>
+                <td>女儿国</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>孙悟空</td>
+                <td>20</td>
+                <td>花果山</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>猪八戒</td>
+                <td>20</td>
+                <td>高老庄</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>沙和尚</td>
+                <td>28</td>
+                <td>流沙河</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>唐僧</td>
+                <td>20</td>
+                <td>女儿国</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>孙悟空</td>
+                <td>20</td>
+                <td>花果山</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>猪八戒</td>
+                <td>20</td>
+                <td>高老庄</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>沙和尚</td>
+                <td>28</td>
+                <td>流沙河</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>唐僧</td>
+                <td>20</td>
+                <td>女儿国</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

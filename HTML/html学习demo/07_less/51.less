@@ -1,0 +1,39 @@
+@w:500px;
+@h:600px;
+@color: #bfa;
+@c:box1;
+@bg-c:background-color;
+// 作为属性值 定义变量的方法为 @变量名:变量值; 
+// 使用的方法为 @变量名;
+// 作为属性名和选择器名 定义变量的方法为 @变量名:变量值;
+// 使用的方法为 @{变量名};
+.wrapper{
+    width: @w;
+    height: @h;
+    border: 5px solid @color;
+    margin: 0 auto;
+    position: relative;
+    .@{c}{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width:200px;
+        height: 200px;
+        @{bg-c}: yellow;
+        .box2{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    }
+}
+
