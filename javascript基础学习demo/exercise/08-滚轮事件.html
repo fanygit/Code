@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚轮事件</title>
+    <style type="text/css">
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 要求
+            // box1对象 可以 随着滚轮的滚动变长 或者 缩短
+            var box1 = document.getElementById('box1');
+
+            function func(event){
+                var event = event||window.event;
+                // alert('滚动了');
+                // alert(event.wheelDelta);
+                if(event.wheelDelta > 0 || event.detail< 0 ){
+                    box1.style.height = box1.clientHeight - 10 + 'px';
+                }else{
+                    box1.style.height = box1.clientHeight + 10 + 'px';
+                }
+
+                event.preventDefault && event.preventDefault();
+
+                return false
+            };
+
+            // 给box1 对象绑定鼠标滚动响应函数
+            box1.onmousewheel = func;
+            // 兼容火狐浏览器
+            bind(box1, 'DOMMouseScroll', func);
+            
+            // 绑定函数
+            function bind(obj, eventStr, callback){
+                if(obj.addEventListener){
+                    // 在除IE8中使用
+                    obj.addEventListener(eventStr, callback);
+                }else{
+                    // 在IE8中使用
+                    obj.attachEvent("on"+eventStr, function(){
+                        callback.call(obj);
+                    });
+
+                }
+            }
+        };
+    </script>
+</head>
+<body style="height: 2000px;">
+    <div id="box1">
+
+    </div>
+</body>
+</html>

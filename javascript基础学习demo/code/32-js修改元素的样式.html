@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js修改元素的样式</title>
+    <style type="text/css">
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script type="text/javascript">
+       window.onload = function(){
+           var btn01 = document.getElementById('btn01');
+
+           btn01.onclick = function(){
+            // 获取 .box1 节点
+            var box1 = document.getElementById('box1');
+    
+            // 修改宽度
+            box1.style.width = '300px';
+            // 修改颜色
+            box1.style.backgroundColor =  'green';
+
+            // 注意事项：
+            //  设置的元素样式 都是 设置的内联样式
+            };
+        };
+
+    </script>
+</head>
+<body>
+    <div id="box1">
+
+    </div>
+    <button id='btn01'>增大</button>
+    
+</body>
+</html>

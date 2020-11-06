@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM查询的其余方法</title>
+    <script type="text/javascript">
+        window.onload = function(){
+        // 获取body标签
+        var body = document.body;
+        // 获取html根标签
+        var html = document.all;
+        // console.log(html.length);
+
+        // 根据元素的class 属性值获取 一组元素节点对象
+        var box1 = document.getElementsByClassName
+
+        // console.log(box1[0].innerHTML);
+
+        // 根据指定标签名来获取页面所有的指定标签
+        
+        var li = document.getElementsByTagName('ul');
+        console.log(li.length);
+        
+        // 使用css选择器来查询一个元素节点对象
+        var div = document.querySelector('div');
+
+        console.log(div.length);
+
+        // 使用 css选择器来查询一组 元素节点对象
+        var divs = document.querySelectorAll('div');
+
+        console.log(divs.length);
+
+
+    }
+    </script>
+</head>
+<body>
+    这是body标签中的内容
+    <div class="box1">
+        这是box1
+        <ul>
+            <li>这是li</li>
+            <li>这是li</li>
+            <li>这是li</li>
+            <li>这是li</li>
+        </ul>
+    </div>
+    <div class="box2">
+
+    </div>
+    <div class="box3">
+
+    </div>
+</body>
+</html>

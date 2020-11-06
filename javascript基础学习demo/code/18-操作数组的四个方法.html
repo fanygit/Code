@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作数组的四个方法</title>
+    <script>
+        // 使用字面量创建数组
+        var arr = ["悟空", '八戒', '沙僧', '唐僧'];
+        console.log(arr)
+
+        // 使用push 向数组的最后一位 添加数据
+        var result = arr.push('白骨精', '蜘蛛精', '玉兔精');
+        console.log("result:"+result);
+        console.log(arr);
+
+        // 使用 pop方法 删除数组的最后一位
+        var result = arr.pop();
+        console.log("删除的数据:"+result);
+        console.log(arr);
+        var result2 = arr.pop();
+        console.log("删除的数据:"+result2);
+        console.log(arr);
+
+        // 使用 unshift 向数组的首部添加 数据
+        var result = arr.unshift("二郎神", '天蓬元帅');
+        console.log("result:"+result);
+        console.log(arr);
+
+        // 使用 shift 删除 数组 首部 数据
+        var result = arr.shift();
+        console.log("删除的数据："+result);
+        console.log(arr);
+        var result2 = arr.shift();
+        console.log("删除的数据："+result2);
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

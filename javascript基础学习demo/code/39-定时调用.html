@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时调用</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 获取count
+            var count = document.getElementById('count');
+
+            // 让count中的内容从1 到 10  自动变化  使用定时器
+            var num = 1;
+
+            
+            timer = setInterval(function(){
+                count.innerHTML = num;
+                num++;
+                if(num == 11){
+                    clearInterval(timer);
+                }
+            }, 1000);
+
+        };
+    </script>
+</head>
+<body>
+    <h1 id="count"></h1>
+</body>
+</html>

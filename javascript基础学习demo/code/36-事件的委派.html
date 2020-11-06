@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的委派</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var u1 = document.getElementById('u1');
+            // var allA = u1.getElementsByTagName('a');
+            // for(var i=0; i< allA.length; i++){
+            //     allA[i].onclick = function(){
+            //         alert("我是一个超连接！！");
+            //     }
+            // }
+
+            // 事件的委派  通过给相同节点的祖先节点绑定事件 以冒泡形式间接给子孙节点绑定事件
+            u1.onclick = function(event){
+                var event = event||window.event;
+                if(event.target.className == 'link'){
+                    alert("这是ul节点的单击响应事件");
+                }
+            };
+
+            var btn01 = document.getElementById('btn01');
+            // 为按钮 btn01 绑定单击响应函数
+            btn01.onclick = function(){
+                // 创建li
+                var li = document.createElement('li');
+                li.innerHTML = "<a href='javascript:;' class='link'>新建超链接</a>";
+                // 添加到ul中
+                u1.appendChild(li);
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">创建</button>
+    <ul id="u1">
+        <li><a href="javascript:;" class="link">超链接一</a></li>
+        <li><a href="javascript:;" class="link">超链接二</a></li>
+        <li><a href="javascript:;" class="link">超链接三</a></li>
+    </ul>
+    
+</body>
+</html>

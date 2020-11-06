@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本数据类型与引用数据类型的区别</title>
+    <script>
+        var a = 100;
+        var b = a;
+        // 修改变量的值不会影响 其他变量的值
+        a++;
+        console.log("a = "+ a);
+        console.log("b = "+ b);
+
+        var obj1 = new Object();
+        var obj2 = new Object();
+
+        obj1.name = '悟空';
+        obj2 = obj1;
+        console.log(obj1);
+        console.log(obj2);
+
+        // 修改对象的值 会修改 引用相同对象的值
+
+        obj2.name = '八戒';
+
+        console.log(obj1);
+        console.log(obj2);
+
+
+        var obj3 = Object();
+        var obj4 = Object();
+
+        obj3.name = '八戒';
+        obj4.name = '八戒';
+
+        // 两个不同对象 相同的值 对象比较是否相等 返回 false
+        console.log(obj3 == obj4);
+        // 两个不同对象 相同的值 值比较是否相等 返回 true
+        console.log(obj3.name == obj4.name);
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

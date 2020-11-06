@@ -1,0 +1,13 @@
+.wrapper{
+    width: 510px;
+    height: 400px;
+    background-color: green;
+    margin: 50px auto;
+    text-align: center;
+    
+}
+.wrapper img{
+    width: 500px;
+    height: 332px;
+    
+}

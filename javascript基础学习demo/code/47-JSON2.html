@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON2</title>
+    <script>
+        var str = '{"name": "孙悟空", "age": 18, "gender": "男"}';
+        
+        var str2 = "alert('hello');";
+        // 使用eval函数来执行一段js代码
+        eval(str2);
+        // 使用eval函数 来把JSON 转换为js对象
+        var obj = eval("("+str+")");
+        // console.log(obj);
+        console.log(obj.name);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

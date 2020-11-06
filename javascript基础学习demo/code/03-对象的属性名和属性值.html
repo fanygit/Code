@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的属性名和属性值</title>
+    <script>
+        // 使用特性字符对的属性名
+        var obj = new Object();
+        obj['123'] = '456';
+        console.log(obj['123']);
+
+        obj['213#$$'] = '345';
+        console.log(obj["213#$$"]);
+
+        // 在obj1 对象中 添加 obj2对象
+        var obj1 = new Object();
+        var obj2 = new Object();
+
+        obj2.name = '八戒';
+        obj2.gender = '男';
+        obj2.age = '20';
+
+        obj1.obj2 = obj2; 
+        // 输出 obj1对象中的内容
+        console.log(obj1);
+
+        // 输出 obj1对象 中  obj2对象 的 name属性值
+        console.log(obj1.obj2['name']);
+
+
+        // 检查 obj1对象中是否包含 指定属性名
+        console.log("name" in obj1);
+
+        // 检查 obj2 对象中 是否 包含 name 属性名
+        console.log("name" in obj2);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

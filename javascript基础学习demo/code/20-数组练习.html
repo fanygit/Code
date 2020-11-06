@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name, age){
+            this.name =name;
+            this.age = age;
+        }
+
+        Person.prototype.toString = function(){
+            return "Person[name="+this.name+","+this.age+"]";
+        }
+
+        // 创建Person对象
+        var per1 = new Person("孙悟空", 22);
+        var per2 = new Person("八戒", 28);
+        var per3 = new Person("红孩儿", 16);
+        var per4 = new Person("白骨精", 17);
+        var per5 = new Person("牛魔王", 32);
+
+        // 将 person 对象 放入 perArr 中
+        var perArr = [per1, per2, per3, per4, per5];
+
+        // 要求：
+        // 创建一个函数，可以将perArr中满18岁的Person提取处理，
+        // 然后封装到一个新的数组中并返回
+        function getGrow(perArr){
+            // 创建 一个 存储 满18岁 Person 对象的数组
+            var arrGrow = [];
+            for(var i=0;i<perArr.length; i++){
+                if(perArr[i].age >=18){
+                    arrGrow.push(perArr[i])
+                }
+            }
+            return arrGrow;
+        }
+        // 调用 函数
+        result = getGrow(perArr);
+        // 遍历结果
+        for(var i=0; i<result.length; i++){
+            console.log(result[i]);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

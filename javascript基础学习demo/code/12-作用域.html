@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域</title>
+    <script>
+        // 创建一个变量
+        var a = 22;
+
+        // 用window的方式调用属性
+        console.log(window.a);
+
+        // 创建一个函数
+        function fun(){
+            console.log("这个fun函数");
+        }
+
+        // 使用window的方式调用函数
+        window.fun();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

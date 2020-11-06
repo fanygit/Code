@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邮箱正则表达式</title>
+    <script>
+        // qq邮箱规则
+        // 483813121@qq.com
+        // 第一位限定1-9 后面可能存在5-9位限定1-9 @qq. 最后2-5位字符可能是字母数字 
+        // [1-9]{1} [0-10]{6-10} @qq /. [A-z0-9]{2,5}
+        var qqemailReg = /^[1-9]{1}[0-9]{5,9}\@\q\q\.[A-z0-9]{2,5}$/;
+        var qqemail = '483813121@qq.com';
+        console.log(qqemailReg.test(qqemail));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

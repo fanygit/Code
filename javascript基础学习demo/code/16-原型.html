@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型</title>
+    <script>
+        // 创建 Person 构造函数
+        function Person(name,gender,age){
+            this.name = name;
+            this.gender = gender;
+            this.age = age;
+            this.sayHello = function(){
+                console.log("Hello, 我是"+ this.name);
+            }
+        }
+        // 创建 对象
+        var per = new Person('八戒','男', 22);
+        var per1 = new Person('悟空','男', 20);
+        // alert(typeof per); 
+
+        // 调用 Person 方法
+        per.sayHello();
+        per1.sayHello();
+
+        // 判断per 对象 的 sayHello方法 与 per1 对象 的 sayHello方法 是否相等  结果 为 false
+        console.log(per.sayHello == per1.sayHello);
+
+        // 创建 Dog 构造方法
+        function Dog(name, age, color){
+            this.name = name;
+            this.age = age;
+            this.color = color;
+        }
+        // 通过原型对象写入 sayHello方法
+        Dog.prototype.sayHello = function(){
+            console.log("汪汪~~ 我是"+this.name+",我的"+this.color+"颜色你喜欢吗");
+        }
+        // 使用 Dog 构造方法 创建对象
+        var cpu =new Dog('cpu', 3, 'yellow');
+        var nct =new Dog('内存条', 3, 'grenn');
+
+        // 调用对象方法
+
+        
+        cpu.sayHello();
+        nct.sayHello();
+        // 通过 使用原型 创建的方法 后  之后调用他们共同的方法  都是来自于同一个内存空间
+        console.log(cpu.sayHello == nct.sayHello);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

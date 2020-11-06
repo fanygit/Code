@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数的创建与调用</title>
+    <script>
+        // 创建 Person 的构造函数
+        //  构造函数一般首字母大写
+        function Person(name, grnder, age){
+            this.name = name;
+            this.grnder = grnder;
+            this.age = age;
+            this.print_name = function(){
+                alert(this.name);
+            }
+        }
+        // 调用 Person 构造函数
+        // 调用 构造函数 需要加关键字 new
+        var wk = new Person('悟空');
+        console.log(wk.print_name());
+        var bj = new Person('八戒');
+        console.log(bj.print_name());
+        // 运算符 instanceof
+        // 作用：检查 一个对象 是否 是一个类的实例
+        //  语法：
+        //      对象 instamceof 对象
+        console.log(wk instanceof Person);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div跟随鼠标移动</title>
+    <style type="text/css">
+        body{
+            height: 2000px;
+            width: 2000px;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            /* border-radius: 50%; */
+            background-color: red;
+            position: absolute;
+        }
+        #box2{
+            width: 200px;
+            height: 40px;
+            border: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var box1 = document.getElementById('box1');
+            var box2 = document.getElementById('box2');
+            document.onmousemove = function(event){
+                var event = event||window.event;
+                // 获取滚动条滚动的 距离
+                var st = document.documentElement.scrollTop;
+                var sl = document.documentElement.scrollLeft;
+                // console.log(st);
+
+                
+
+                // 获取 鼠标移动坐标 
+                var x = event.clientX;
+                var y = event.clientY;
+                // var x = event.pageX;
+                // var y = event.pageY;
+                // pageX和pageY 在IE8中不兼容
+
+                // 更改 div 位置
+                box1.style.top = y + st + 'px';
+                box1.style.left = x + sl + 'px'; 
+
+                box2.innerHTML = 'top='+box1.style.top+'; left='+box1.style.left;
+
+                
+                
+
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box1">
+
+    </div>
+    <div id="box2">
+
+    </div>
+</body>
+</html>

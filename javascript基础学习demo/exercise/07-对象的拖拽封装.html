@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的拖拽</title>
+    <style type="text/css">
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            // 鼠标按下后 box1 可以进行拖拽
+            // 鼠标移动时, box1 便开始跟随鼠标移动
+            // 鼠标松开后 box1 便停放在那个位置
+
+
+            var box1 = document.getElementById('box1');
+            var box2 = document.getElementById('box2');
+            var img1 = document.getElementById('img1');
+
+            drag(box1);
+
+            drag(box2);
+
+            drag(img1);
+
+            // 实现拖拽功能
+            function drag(obj) {
+                // 鼠标按下后 box1 可以进行拖拽
+                obj.onmousedown = function (event) {
+
+                    // 设置box1捕获所有鼠标事件
+
+                    obj.setCapture && obj.setCapture();
+                    // 解决兼容性
+                    var event = event || window.event;
+                    // div 的偏移量 = 鼠标的clientX - div的offsetLeft
+                    var ol = event.clientX - obj.offsetLeft;
+                    var ot = event.clientY - obj.offsetTop;
+
+                    // 鼠标移动时, box1 便开始跟随鼠标移动
+                    document.onmousemove = function (event) {
+                        // alert(2);
+                        var event = event || window.event;
+                        var x = event.clientX - ol;
+                        var y = event.clientY - ot;
+
+                        obj.style.left = x + 'px';
+                        obj.style.top = y + 'px';
+
+                    };
+                    // 鼠标松开后 box1 便停放在那个位置
+                    document.onmouseup = function () {
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                        obj.releaseCapture && obj.releaseCapture();
+
+                    };
+                    return false
+                };
+            }
+
+        };
+    </script>
+</head>
+
+<body>
+    <span>我是一段文字</span>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <img src="./img/1.jpg" alt="" id="img1" style="position:absolute;">
+</body>
+
+</html>

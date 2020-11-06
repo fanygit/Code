@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的绑定</title>
+    <script text="text/javascript">
+        window.onload = function(){
+            // // 给按钮 绑定单击响应函数
+            var btn01 = document.getElementById('btn01');
+            // btn01.onclick = function(){
+            //     alert(1);
+            // };
+            // // 多次给按钮 绑定单击响应函数
+            // btn01.onclick = function(){
+            //     alert(2);
+            // };
+
+            // 需要多次给一个元素绑定响应函数 需要使用addEventListener() 函数
+            // 需要注意的是 该方法不支持IE8浏览器
+            // btn01.addEventListener('click', function(){
+            //     alert(1);
+            // }, false);
+            // btn01.addEventListener('click', function(){
+            //     alert(2);
+            // }, false);
+
+            // 要想让IE8 浏览器 完成这样的功能，需要使用  attachEvent() 函数
+            // btn01.attachEvent("onclick", function(){
+            //     alert(1);
+            // });
+            // btn01.attachEvent("onclick", function(){
+            //     alert(2);
+            // });
+            // btn01.attachEvent("onclick", function(){
+            //     alert(3);
+            // });
+
+            bind(btn01, "click", function(){
+                alert(1);
+            });
+            bind(btn01, "click", function(){
+                alert(2);
+            });
+
+            // 定义一个函数 用来为指定元素绑定响应函数
+            // 要求 兼容所有浏览器
+
+            function bind(obj, eventStr, callback){
+                if(obj.addEventListener){
+                    // 在除IE8中使用
+                    obj.addEventListener(eventStr, callback);
+                }else{
+                    // 在IE8中使用
+                    obj.attachEvent("on"+eventStr, callback);
+                }
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">按钮</button>
+</body>
+</html>

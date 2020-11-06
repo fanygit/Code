@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 设置 轮播图容器 样式 */
+        #outer {
+            width: 520px;
+            height: 350px;
+            background-color: #bfa;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        /* 设置 图片容器样式 */
+        #imgList {
+            list-style: none;
+            /* width: 2600px; */
+            position: absolute;
+            /* left: -1040px; */
+
+        }
+
+        #imgList li {
+            float: left;
+            margin: 10px 10px;
+        }
+
+        #navDiv {
+            position: absolute;
+            bottom: 15px;
+            /* 计算left值
+                left = (总宽度 - navDiv宽度)/2 
+             */
+            /* left: 210px; */
+
+        }
+
+        #navDiv a {
+            float: left;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            margin-left: 5px;
+            /* 设置透明 */
+            opacity: 0.5;
+            /* 透明兼容IE8 */
+            filter: alpha(opacity=50);
+
+        }
+
+        #navDiv a:hover {
+            background-color: black;
+        }
+    </style>
+    <script type="text/javascript" src="../code/42-js/tools.js"></script>
+    <script>
+        window.onload = function () {
+            /*
+                设置根据图片的数量 自动设置页面的宽度
+            */
+            // 获取 imgList
+            var imgList = document.getElementById('imgList');
+
+            // 获取所有img
+            var imgArr = imgList.getElementsByTagName('img');
+
+            // 通过图片的数量自动设置 imgList 的宽度
+            imgList.style.width = 520 * imgArr.length + 'px';
+
+            // 获取 outer
+            var outer = document.getElementById('outer');
+
+            /*
+                为超链接组 设置整体自动居中，即便添加了多个也能自动居中            
+            */
+            // 获取navDiv
+            var navDiv = document.getElementById('navDiv');
+
+            // 设置 navDiv 的left 实现自动居中
+            navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth) / 2 + 'px';
+
+            /*
+                为超链接组 设置默认选中第一个
+            */
+            // 设置选中索引
+            var index = 0;
+            // 获取 navDiv
+            var navDiv = document.getElementById('navDiv');
+
+            // 获取 navDiv 下的 a
+            var aAll = navDiv.getElementsByTagName('a');
+
+            // 选中第一个
+            aAll[index].style.backgroundColor = 'black';
+
+            /*
+                点击超链接后切换到指定图片
+                    点击第一个超链接 显示第一个图片
+                    点击第二个超链接，显示第二个图片
+            */
+            // 变量超链接组
+            for (var i = 0; i < aAll.length; i++) {
+                // 为每个超链接添加一个num属性
+                aAll[i].num = i;
+                // 为每个超链接绑定单击响应函数
+                aAll[i].onclick = function () {
+                    // 关闭上一个定时器
+                    clearInterval(timer);
+                    //    alert(this.num);
+                    // 当第一张要切换到 第二张的时候  
+                    // 第一张图片的left值为0 
+                    // 切换到第二种 left值 需要加上-520px
+                    // 获取当前选中的索引值
+                    index = this.num;
+                    // 
+                    //    imgList.style.left = index * - 520 + 'px';
+                    // 设置选中的a
+                    setA();
+                    move(imgList, 'left', index * -520, 20, function(){
+                        // 动画执行完毕 开启自动切换
+                        autoChange();
+                    });
+                    
+
+                    
+                };
+            }
+
+            // 开启轮播
+            autoChange();
+        
+
+            // 创建一个方法设置选中的a
+            function setA() {
+                if(index >= imgArr.length -1){
+                    index = 0;
+
+                    imgList.style.left = 0;
+
+                }
+                for (var i = 0; i < aAll.length; i++) {
+                    aAll[i].style.backgroundColor = '';
+                }
+                aAll[index].style.backgroundColor = 'black';
+            }
+
+            // 创建一个定时器标识
+            var timer;
+
+            // 创建一个方法 用来开启自动轮播
+            function autoChange(){
+                timer = setInterval(function(){
+                    // index 自增
+                    index++;
+                    // 超出图片的索引 则 重新给index赋值
+                    // if(index > aAll.length){
+                    //     index = 0;
+                    // }
+                    index %= imgArr.length;
+                    move(imgList, 'left', index * -520, 30, function(){
+                        // 更改按钮
+                        setA();
+                    });
+                    
+                },3000);
+            }
+            // 复盘
+            // 流程
+            // 1. 首先搭建轮播图页面和按钮组
+            // 2. 实现通过按钮 来 控制图片的切换
+            // 3. 不点击按钮的情况下，使轮播图自动轮播
+            // 4. 点击按钮的情况下关闭自动轮播，动画执行完毕后，再次开启轮播
+            // 难点：
+            //  1. 在自动轮播的时候，如果不判断是否超出最大值，会轮播到空白页面，
+            //      通过判断当前索引是否超过最大值的方式，来让轮播图片回到起点
+            //  2. 在轮播回到起点的时候，会从最后一张图会到第一张，过程中会有一段动画，照成页面极其不自然，
+            //      通过在结构中，在图片末尾添加第一张图片，然后轮播到最后一张图，也就是跟第一张图一致，
+            //      在这个时候，直接把偏移值修改成第一张图片，那么就不会出现不自然的情况。
+            //  3. 轮播图在自动轮播的时候，如果点击按钮，还是会自动轮播，造成点击按钮后，马上又跳到下一页面
+            //      ，解决办法是，给自动轮播的定时器设置一个标识，在通过按钮来控制轮播的时候，就会先关闭自动轮播的定时器
+            //       等到动画执行完毕，move函数的回调函数中再次开启自动轮播。
+            // 得到：
+            //      一个完成特定功能的流程，可以封装成一个方法多次使用，可以在方法的参数中设置一个回调函数，让
+            //      这个函数有多种可能性。
+        };
+    </script>
+</head>
+
+<body>
+    <div id="outer">
+        <ul id="imgList">
+            <li><img src="./img/1.jpg" alt="冰棍"></li>
+            <li><img src="./img/2.jpg" alt="冰棍"></li>
+            <li><img src="./img/3.jpg" alt="冰棍"></li>
+            <li><img src="./img/4.jpg" alt="冰棍"></li>
+            <li><img src="./img/5.jpg" alt="冰棍"></li>
+            <li><img src="./img/1.jpg" alt="冰棍"></li>
+        </ul>
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+
+</html>

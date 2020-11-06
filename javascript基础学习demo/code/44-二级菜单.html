@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>二级菜单</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			
+			a,img {
+				border: 0;
+				text-decoration: none;
+			}
+			
+			body {
+				font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+			}
+		</style>
+
+        <link rel="stylesheet" type="text/css" href="./44-css/css/sdmenu.css" />
+        <script text="text/javascript" src="./42-js/tools.js"></script>
+		<script>
+            window.onload = function(){
+                /*
+                    要求：点击菜单，切换菜单栏状态
+                */
+                // 获取span
+                var menuSpan = document.querySelectorAll(".menuSpan");
+                // alert(menuSpan.length);
+                var openDiv = menuSpan[0].parentNode;
+                // 为span绑定单击响应函数
+                for(var i=0; i<menuSpan.length; i++){
+                    menuSpan[i].onclick = function(){
+                        // 获取span的父节点 div
+                        var prentDiv = this.parentNode;
+                        // addClass(openDiv, 'collapsed');
+                        // 切换菜单
+                        toggleClass(prentDiv, 'collapsed');
+                        // 如果打开的div 与正准备打开的div一致 则不进入判断
+                        if(openDiv != prentDiv && !hasClass(openDiv, 'collapsed')){
+                        //     // 展开菜单后 ，关闭之前的div
+                            // addClass(openDiv, 'collapsed');
+                        //     // 为了可以统一处理动画的过渡效果，我们希望在这将addClass该为toggleClass
+                        //     // toggleClass() 不需要有移除的功能 
+                            toggleClass(openDiv, 'collapsed');
+                        }
+                        // // 重新给打开的div赋值为当前点击的div
+                        openDiv = prentDiv;
+                    };
+                }
+				/*
+					复盘：
+						流程：
+						1. 获取span  
+						2. 给每个span绑定单击响应函数 
+						3. 调用toggleClass函数更改类名进行切换菜单 
+
+						要求是点击当前的span 会关闭掉上一个span。
+						解决办法：首先默认展开第一个span，赋值给openDiv ，再次点击，会通过addClass关闭掉第一个默认打开的span，
+									然后把当前打开的span重新再次赋值给openDiv，单再次点击下一个的时候就会关闭上一个赋值span,
+									这样做的问题就是，当关闭掉第一个span的时候，再次点击第一个span，就会出现打不开的现象。
+								
+								解决办法：
+									判断上一个打开的span 是否等于当前打开的span 如果是则不再展开
+
+							说明：
+								为了方便执行过渡效果，统一功能的实现方式，需要把展开的方式 从addClass 更改为toggleClass 
+								这样做会出现一个问题，由于addClass 的功能就是给元素添加类名，而toggleClass
+								的功能是进行切换，有则不添加，没有则添加，会照成的现象是，打开一个会造成其他的也打开，
+								解决办法：
+									再判断中再加一个条件，用hasClass 进行判断 是否展开 没有展开 才进行判断 
+
+
+
+
+							
+				*/
+            };
+        </script>
+		
+	</head>
+
+	<body>
+
+		<div id="my_menu" class="sdmenu">
+			<div>
+				<span class="menuSpan">在线工具</span>
+				<a href="#">图像优化</a>
+				<a href="#">收藏夹图标生成器</a>
+				<a href="#">邮件</a>
+				<a href="#">htaccess密码</a>
+				<a href="#">梯度图像</a>
+				<a href="#">按钮生成器</a>
+			</div>
+			<div class="collapsed">
+				<span class="menuSpan">支持我们</span>
+				<a href="#">推荐我们</a>
+				<a href="#">链接我们</a>
+				<a href="#">网络资源</a>
+			</div>
+			<div class="collapsed">
+				<span class="menuSpan">合作伙伴</span>
+				<a href="#">JavaScript工具包</a>
+				<a href="#">CSS驱动</a>
+				<a href="#">CodingForums</a>
+				<a href="#">CSS例子</a>
+			</div>
+			<div class="collapsed">
+				<span class="menuSpan">测试电流</span>
+				<a href="#">Current or not</a>
+				<a href="#">Current or not</a>
+				<a href="#">Current or not</a>
+				<a href="#">Current or not</a>
+			</div>
+		</div>
+	</body>
+</html>

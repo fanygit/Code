@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toString</title>
+    <script>
+        // 创建 构造函数 Person
+        function Person(name,gender,age){
+                this.name = name;
+                this.gender = gender;
+                this.age = age;
+        }
+
+        // 通过修改 Person对象的原型 中的原型 toString 属性 来改变输出的内容
+        Person.prototype.toString = function(){
+            return "name:"+this.name+"gender:"+this.gender+"age:"+this.age+"通过原型修改后";
+        };
+
+        // 创建对象
+        var per = new Person('八戒', '男', 22);
+        console.log(per);
+        var per1 = new Person('悟空', '男', 20);
+        console.log(per1);
+
+        console.log(per.toString());
+        console.log(per1.toString());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

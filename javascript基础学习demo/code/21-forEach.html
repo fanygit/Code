@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+    <script>
+        // 创建一个数组
+        var arr = ['八戒', '悟空', '唐僧', '沙和尚', '牛魔王']
+
+        // 使用forEach 遍历数组
+        // 使用forEach 需要 传一个函数 作为参数
+        // 函数中可以定义三个参数来接收实参
+        // 第一个参数代表 正在遍历 的 元素
+        // 第二个参数代表 正在遍历的 元素索引
+        // 第三个参数代表 整个数组对象
+        arr.forEach(function(a,b,c){
+            console.log("name："+a+",序号："+b);
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

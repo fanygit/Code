@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组去重练习</title>
+    <script>
+        // 定义一个数组
+        var arr = [1,2,3,3,2,2,4,5,6,5,4,7];
+        // 用函数完成一个数组去重的功能
+        function goRe(arr){
+            // 遍历整个数组
+            for(var i=0; i<arr.length; i++){
+                console.log(arr[i]);
+                // 遍历 索引i 之后的 数组
+                for(var j=i+1; j<arr.length; j++){
+                    // 判断 索引i的值 是否 等于 索引j 之后的值
+                    // 如果是 则 删除索引为j的元素
+                    // 如果不是则继续执行
+                    if(arr[i] == arr[j]){
+                        arr.splice(j, 1);
+                        j--;
+                    }
+                }
+            }
+        }
+        goRe(arr);
+        console.log(arr);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

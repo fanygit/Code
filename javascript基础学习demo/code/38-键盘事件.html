@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 获取 input 对象
+            var input = document.getElementById('input');
+            // 给input 对象添加 键盘按下响应函数
+            input.onkeydown = function(event){
+                var event = event||window.event;
+                // 功能： 让输入框中不能输入数字
+                if(event.keyCode >= 48 && event.keyCode <=57){
+                    return false
+                } 
+                // console.log(event.keyCode);
+            };
+           
+        };
+    </script>
+</head>
+<body>
+    <input type="text" id="input">
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div移动</title>
+    <style type="text/css">
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 要求：
+            // 通过键盘上的上下左右 按键 来控制 div 移动
+
+            // 获取 box1 对象var
+            box1 = document.getElementById('box1');
+
+            // 给文档绑定 按键按下时的响应函数
+            document.onkeydown = function(event){
+                // 解决事件对象 兼容性
+                var event = event||window.event;
+                // console.log(event.keyCode);
+
+                // 判断 键盘上是否按照了 上键
+                if(event.keyCode === 38){
+                    // 把 div 往上移
+                    // alert(box1.clientTop-10 + 'px');
+                    var top = box1.offsetTop;
+                    top = top - 10;
+                    console.log("top="+top);
+                    box1.style.top = top + 'px';
+                    
+                }else if(event.keyCode == 40){
+                    // 把 div 往下移
+                    var top = box1.offsetTop;
+                    top = top + 10;
+                    console.log("top="+top);
+                    box1.style.top = top + 'px';
+                }
+                else if(event.keyCode == 37){
+                    // 把 div 往左移
+                    var left = box1.offsetLeft;
+                    left = left - 10;
+                    console.log("left="+left);
+                    box1.style.left = left + 'px';
+                }
+                else if(event.keyCode == 39){
+                    // 把 div 往右移
+                    var left = box1.offsetLeft;
+                    left = left + 10;
+                    console.log("left="+left);
+                    box1.style.left = left + 'px';
+                }
+            };
+        };
+    </script>
+</head> 
+<body>
+    <div id="box1">
+    </div>
+    
+</body>
+</html>

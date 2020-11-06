@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./01_css/style.css">
+    <title>图片切换练习</title>
+    <script>
+        window.onload = function(){
+            // 获取第一个按钮
+            var btn1 = document.getElementById('prev');
+            // 获取第二个按钮
+            var btn2 = document.getElementById('next');
+            // 图片路径列表
+            var img_list = ['http://127.0.0.1:8888/exercise/img/1.jpg', 'http://127.0.0.1:8888/exercise/img/2.jpg', 'http://127.0.0.1:8888/exercise/img/3.jpg', 'http://127.0.0.1:8888/exercise/img/4.jpg', 'http://127.0.0.1:8888/exercise/img/5.jpg', 'http://127.0.0.1:8888/exercise/img/5.jpg']
+            // 图片列表索引
+            var index = 0;
+            // 单击 按钮1 改变图片路径
+            btn1.onclick = function(){
+                var img = document.getElementsByTagName('img')[0];
+                img.src = img_list[index];
+                index--;
+                if(index < 0){
+                    index = 4;
+                }
+            }
+            // 单击 按钮2 改变图片路径
+            btn2.onclick = function(){
+                var img = document.getElementsByTagName('img')[0];
+                img.src = img_list[index];
+                index++;
+                if(index >4){
+                    index = 0;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <img  src="./img/1.jpg" alt="图片">
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+</body>
+</html>

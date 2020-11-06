@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片自动切换练习</title>
+    <script>
+        window.onload = function () {
+            // 要求：使用定时器 实现图片自动切换
+
+            // 获取img1 
+            var img1 = document.getElementById('img1');
+
+            var img_list = ['http://127.0.0.1:8888/exercise/img/1.jpg', 'http://127.0.0.1:8888/exercise/img/2.jpg', 'http://127.0.0.1:8888/exercise/img/3.jpg', 'http://127.0.0.1:8888/exercise/img/4.jpg', 'http://127.0.0.1:8888/exercise/img/5.jpg'];
+
+            // 更改 img1 对象的 src链接
+            // for(var i=0;i< img_list.length; i++){
+            //     img1.src = img_list[i];
+            //     alert(img_list[i]);
+            // }
+            // img1.src = img_list[0];
+            // img1.src = img_list[1];
+            // img1.src = img_list[2];
+
+            // 获取 btn01
+            var btn01 = document.getElementById('btn01');
+
+            // timer 定义成全局变量
+            var timer;
+
+            // 给btn01 绑定单击响应函数
+            btn01.onclick = function () {
+                // 在开启下一个定时器前 先关闭上一个
+                clearInterval(timer);
+                var num = 0;
+                timer = setInterval(function () {
+                    img1.src = img_list[num];
+                    num++;
+                    num = num % 5;
+                }, 2000);
+            };
+
+            // 获取 btn02 
+            var btn02 = document.getElementById('btn02');
+
+            // 给btn02 绑定单击响应函数
+            btn02.onclick = function(){
+                clearInterval(timer);
+            };
+
+
+        };
+    </script>
+</head>
+
+<body>
+    <img id="img1" src="./img/1.jpg" alt="img">
+    <br>
+    <br>
+    <button id="btn01">开始</button>
+    <button id='btn02'>停止</button>
+</body>
+
+</html>

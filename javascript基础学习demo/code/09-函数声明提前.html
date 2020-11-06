@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量的声明提前</title>
+    <script>
+        // 变量的声明提前  所以的变量会提前加载 但是不会赋值 
+        console.log(a);
+
+        // 创建一个变量
+        var a = 22;
+
+        // 调用函数 函数也同上
+        fun1();
+
+        // 创建一个函数
+        function fun1(){
+            console.log("这是fun1函数");
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

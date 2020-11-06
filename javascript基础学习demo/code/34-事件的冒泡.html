@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的冒泡</title>
+    <style type="text/css">
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+        #sp1{
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var html = document.documentElement;
+            html.onclick = function(){
+                alert("我是html的单击响应函数");
+            };
+            var box1 = document.getElementById('box1');
+            box1.onclick = function(){
+                alert("我是box1的单击响应函数");
+            };
+            var sp1 = document.getElementById('sp1');
+            sp1.onclick = function(event){
+                event = event||window.event;
+                alert('我是span的单击响应函数');
+                event.cancelBubble = true;
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box1">
+        我是box1
+        <span id="sp1">我是span</span>
+    </div>
+</body>
+</html>

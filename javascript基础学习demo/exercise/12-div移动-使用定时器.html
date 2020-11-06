@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div移动</title>
+    <style type="text/css">
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            // 功能:
+            // 通过键盘控制 div移动
+            // 获取box1 对象
+            var box1 = document.getElementById('box1');
+            // 表示 移动的速度
+            var speed = 10;
+
+            var key = 0;
+
+            setInterval(function () {
+                switch (key) {
+                    case 38:
+                        box1.style.top = box1.offsetTop - speed + 'px';
+                        break;
+                    case 40:
+                        box1.style.top = box1.offsetTop + speed + 'px';
+                        break;
+                    case 37:
+                        box1.style.left = box1.offsetLeft - speed + 'px';
+                        break;
+                    case 39:
+                        box1.style.left = box1.offsetLeft + speed + 'px';
+                        break;
+                }
+            }, 30);
+
+            document.onkeydown = function (event) {
+                // 解决兼容性
+                var event = event || window.event;
+                console.log(event.keyCode);
+                // 上 38
+                // 下 40
+                // 左 37
+                // 右 39
+
+                // 如果按下了 ctrl 键 则移动速度 为100
+                if (event.ctrlKey) {
+                    speed = 50;
+                }else{
+                    speed = 10;
+                }
+
+                key = event.keyCode;
+
+                // 当按键松开时 div不在移动
+                document.onkeyup = function(){
+                    key = 0;
+                };
+
+
+
+            };
+
+
+        }; 
+    </script>
+</head>
+
+<body>
+    <div id="box1">
+    </div>
+
+</body>
+
+</html>

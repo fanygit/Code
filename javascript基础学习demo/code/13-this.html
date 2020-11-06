@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+    <script>
+        var name = '全局';
+        function func(){
+            console.log(this.name);
+        }
+        var obj = {
+            name: '孙悟空',
+            print_name: func
+        }
+        var obj2 = {
+            name: '猪八戒',
+            print_name: func
+        }
+
+        // 调用 func函数
+        func();
+        // 调用obj 里的 print_name 函数
+        obj.print_name();
+
+        // 调用 obj2 里的 print_name 函数
+        obj2.print_name();
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

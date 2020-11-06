@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用工厂方法创建对象</title>
+    <script>
+        // // 创建对象
+        // var obj = new Object();
+        // obj.name = '孙悟空';
+        // obj.grnder = '男';
+        // obj.age = 22;
+        // obj.print_name = function(){
+        //     alert(obj.name);
+        // }
+
+        // // 调用对象
+        // obj.print_name();
+
+        // 创建 创建对象的 函数
+        function createObj(){
+            var obj = new Object();
+            obj.name = '孙悟空';
+            obj.grnder = '男';
+            obj.age = 22;
+            obj.print_name = function(){
+            alert(this.name);
+            }
+            return obj;
+        }
+
+        // 调用函数
+        obj1 = createObj();
+        // 调用对象方法
+        obj1.print_name();
+
+        // 使用工厂方法创建对象
+        function CreatePerson(name, grnder, age){
+            var obj = new Object();
+            obj.name = name;
+            obj.grnder = grnder;
+            obj.age = age;
+            obj.print_name = function(){
+                window.alert(this.name);
+            }
+            return obj;
+        }
+
+        // 创建对象
+        obj1 = CreatePerson('唐僧', '男', 22);
+        // 调用对象方法
+        obj1.print_name();
+
+        // 创建对象
+        obj2 = CreatePerson('八戒', '男', 20);
+        // 调用对象方法
+        obj2.print_name();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

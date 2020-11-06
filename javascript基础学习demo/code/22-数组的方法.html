@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的方法</title>
+    <script>
+        // 创建一个数组
+        var arr = ["悟空", "八戒", "唐僧", "沙和尚", "白骨精", "玉兔精"];
+
+        console.log(arr);
+        // slice()方法
+        // 作用：用来提取数组中的指定元素，不会改变原数组
+        //  参数：第一个参数 代表 开始位置
+        // 第二个参数  代表结束位置
+        result = arr.slice(2,4);
+        console.log(arr);
+        console.log(result);
+
+        result = arr.slice(2, -1);
+        console.log(arr);
+        console.log(result);
+
+        // splice()方法
+        // 作用：用于删除数组中的指定元素，使用splice会影响到原数组，还可以添加元素
+        // 参数：第一个 代表 起始位置
+        //       第二个 代表 要删除元素的数量 
+        // result = arr.splice(2, 2);
+        // console.log("arr："+arr);
+        // console.log("result："+result);
+        result = arr.splice(2,0, '牛魔王',"铁扇公主");
+        console.log(arr);
+        console.log(result);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
