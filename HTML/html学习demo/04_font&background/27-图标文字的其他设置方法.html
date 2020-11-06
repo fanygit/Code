@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <title>图标文字设置</title>
+    <style>
+        ul li{
+            list-style: none;
+        }
+
+       li::before{
+            /* fab类的设置方式 */
+            /* content: '\f17b ';
+            /* font-family: 'Font Awesome 5 Brands'; */ 
+            /* fas类的设置方式 */
+            content: '\f0f3';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            /* 设置大小、颜色 */
+            font-size: 16px;
+            color: blue;
+
+       }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>aaaaaaa</li>
+        <li>bbbbbbb</li>
+        <li>ccccccc</li>
+        <li>ddddddd</li>
+        <li>eeeeeee</li>
+    </ul>
+    <!-- 通过实体&#x;设置 -->
+    <span class="fas">&#xf6d5;&#xf6d5;&#xf6d5;&#xf6d5;&#xf6d5;</span>
+</body>
+</html>

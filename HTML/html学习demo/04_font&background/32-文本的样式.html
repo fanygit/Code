@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本的样式</title>
+    <style>
+        .box1{
+            /* 设置删除线 */
+            text-decoration: line-through;
+        }
+        .box2{
+            width: 200px;
+            /* 设置文本不换行 */
+            white-space: nowrap;
+            /* 裁剪掉超出的文本 */
+            overflow: hidden;
+            /* 设置超出的文本为省略号 */
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <!-- 设置文本修饰 -->
+    <div class="box1">
+        Using the Hello World guide, you’ll create a repository, start a branch, write comments, and open a pull request.
+    </div>
+    <!-- 设置页面过长显示省略号 -->
+    <div class="box2">
+        Using the Hello World guide, you’ll create a repository, start a branch, write comments, and open a pull request.Using the Hello World guide, you’ll create a repository, start a branch, write comments, and open a pull request.
+    </div>
+</body>
+</html>

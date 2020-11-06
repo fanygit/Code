@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景样式2</title>
+    <style>
+        .box1{
+            /* 为容器溢出进行设置 */
+            overflow: auto;
+            /* 设置大小 */
+            width: 500px;
+            height: 500px;
+            /* 设置边框 */
+            border: 10px double red;
+            /* 设置内边距 */
+            padding: 10px;
+            /* 设置背景颜色 */
+            background-color: pink;
+            /* 设置背景范围
+                border-box 默认值 背景会出现在 框下边
+                padding-box 背景不会出现在框 只出现在内容区根内边距
+                centent-box 背景只出现在内容区
+             */
+            background-clip: content-box;
+            /* 设置背景图片 */
+            background-image: url("../images/shuiguo.png");
+
+            /* 设置背景不重复 y
+                repeat 默认值 背景会延着 x轴 y轴 重复
+                repeat-x 背景会延着 x轴重复
+                repeat-y 背景会延着 y轴重复
+                no-repeat 背景不重复
+            */
+            background-repeat: no-repeat;
+            /* 设置背景图片居中显示 */
+            /* background-position: center center; */
+            /* 用偏移量设置背景图片 */
+            /* background-position: 0px 200px; */
+            /* 设置背景图片大小 */
+            /* background-size: 80px;*/
+            /* 通过属性这是背景图片大小 
+                cover 图片比例不变 将元素铺满
+                contain 图片比例不变 将图片在元素中完整显示
+            */
+            /* background-size: cover; */
+
+
+        }
+        .box2{
+            width: 200px;
+            height: 1200px;
+            /* background-color: orange;
+            background-image: url("../images/loveqiqiu.png");
+            background-repeat: no-repeat;
+            background-position: 0px 300px;
+            /* 设置背景图片是否跟随元素移动 
+                background-attachment 
+                    scroll 默认值 背景图片会跟随元素移动
+                    fixed 背景会固定在页面中 不会跟随元素移动
+            */
+            /* background-attachment: fixed; */
+            /* 设置background 的简写属性 */
+            background: url("../images/loveqiqiu.png") no-repeat 20px 300px/100px 100px fixed;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    
+</body>
+</html>

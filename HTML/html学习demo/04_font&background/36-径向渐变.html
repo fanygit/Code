@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>径向渐变设置</title>
+    <style>
+        .box1{
+            width: 300px;
+            height: 500px;
+            /* 设置一个径向渐变的背景 圆心大小 100px 100px 的正圆*/
+            /* background-image: radial-gradient(100px 100px,pink, orange); */
+            /*设置一个 正圆的径向渐变的背景 
+                circle 表示正圆
+                ellipse 表示椭圆
+            */
+            /* background-image: radial-gradient(circle, pink,orange); */
+            /* 设置 左上角 大小 为 100px 的 径向渐变背景 */
+            background-image: radial-gradient(closest-side at 100px 100px, green, orange);
+
+        }
+    </style>
+</head> 
+<body>
+    <div class="box1">
+
+    </div>
+    
+</body>
+</html>
