@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简单的布局</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<style type="text/css">
+			/*提取公共属性 精简代码*/
+			header,main,footer{
+				width: 1000px;
+				margin: 10px auto;
+			}
+			header{
+				height: 150px;
+				background-color: gray;
+			}
+			
+			main{
+				height: 400px;
+				background-color: #BBFFAA;
+			}
+			
+			footer{
+				height: 150px;
+				background-color: orange;				
+			}
+			/*提取main元素的子元素的公共样式*/
+			nav,article,aside{
+				float: left;
+				height: 100%;
+				margin: 0px 5px;
+			}
+			nav{
+				width: 200px;
+
+				background-color: yellow;
+			}
+			article{
+				width: 570px;
+				background-color: pink;
+			}
+			aside{
+				width: 200px;
+				background-color: plum;
+			}
+			aside{}
+		</style>
+	</head>
+	<body>
+		<!--设置头部-->
+		<header></header>
+		<!--设置主体-->
+		<main>
+			<!--设置左边栏-->
+			<nav></nav>
+			<!--设置内容区-->
+			<article></article>
+			<!--设置右边栏-->
+			<aside></aside>
+		</main>
+		<!--设置底部-->
+		<footer></footer>
+	</body>
+</html>

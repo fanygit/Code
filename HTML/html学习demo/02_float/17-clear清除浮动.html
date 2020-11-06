@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>清除浮动</title>
+		<style type="text/css">
+			div{
+				font-size: 50px;
+			}
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: #DB7093;
+				float: left;
+			}
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: #BBFFAA;
+				/*设置清除浮动*/
+				/*left 代表清除左侧浮动 right代表清除右侧浮动 both代表清除当前浮动元素中高度最高的元素*/
+				clear:both;
+				
+			}
+			.box2{
+				width: 300px;
+				height: 300px;
+				background-color: yellow;
+				float: right;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">1</div>
+		<div class="box2">2</div>
+		<div class="box3">3</div>
+	</body>
+</html>

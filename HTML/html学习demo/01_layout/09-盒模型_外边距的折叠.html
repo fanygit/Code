@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>外边距的折叠</title>
+		<style type="text/css">
+			.box1,.box2{
+				background-color: #BBFFAA;
+			}
+			.box1{
+				width: 200px;
+				height: 200px;
+				margin-bottom: 100px;
+				/*
+				 * 兄弟元素之间 两个元素都设置有外边距，并且重叠，则选则两者中最大的值。
+				 */
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				margin-top: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+	</body>
+</html>

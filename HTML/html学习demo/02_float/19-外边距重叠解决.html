@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>外边距重叠解决</title>
+		<style type="text/css">
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: palegreen;
+			}
+			.box2{
+				width: 50px;
+				height: 50px;
+				background-color: red;
+				margin-top: 150px;
+			}
+			/*解决外边距重叠*/
+			/*.box1::before{
+				content: '';
+				display: table;
+
+				
+			}*/
+			/*常用解决外边距重叠的方式*/
+			.clearfix::after,
+			.clearfix::before{
+				content: '';
+				display: table;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1 clearfix">
+			<div class="box2"></div>
+		</div>
+	</body>
+</html>

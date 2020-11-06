@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>元素的层级演示</title>
+		<style type="text/css">
+			div{
+				font-size: 20px;
+			}
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+				position: relative;
+				/*z-index: 3;*/
+			
+				
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: rgb(255,0,0,.5);
+				position: absolute;
+				top: 100px;
+				left: 100px;
+				z-index: 3;
+				
+			}
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+				position: absolute;
+				top: 200px;
+				left: 200px;
+				/*z-index: 5;*/
+			}
+			.box4{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+				top: 100px;
+				left: 100px;
+				z-index: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">1</div>
+		<div class="box2">2</div>
+		<div class="box3">3
+			<div class="box4">4</div>
+		</div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>绝对定位演示</title>
+		<style type="text/css">
+			div{
+				font-size: 30px;
+			}
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: peachpuff;
+			}
+			.box2{
+				width: 400px;
+				height: 400px;
+				background-color: orange;
+				/*设置绝对定位后 元素会冲文档流中脱离*/
+				/*position:absolute;*/
+				/*设置相对定位后 子元素绝对定位后的原点就是当前元素的位置*/
+				position: relative;
+			}
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+			.box4{
+				width: 300px;
+				height: 300px;
+				background-color: palegreen;
+				/*开启定位后 子元素的绝对定位会参照此元素为原点*/
+				/*position: relative;*/
+			}
+			.box5{
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+				/*开启绝对定位*/
+				position: absolute;
+				/*top: 0px;
+				left: 0px;*/
+				/*设置绝对定位为右下角*/
+				bottom: 0px;
+				right: 0px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">1</div>
+		<div class="box2">
+			2
+			<div class="box4">
+				4
+				<div class="box5">
+					5
+				</div>
+			</div>
+		</div>
+		<div class="box3">3</div>
+	</body>
+</html>

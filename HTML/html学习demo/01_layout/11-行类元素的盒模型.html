@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>行类元素的盒模型</title>
+		<style type="text/css">
+			.s1{
+				background-color: yellow;
+				font-family: "微软雅黑";
+				/*padding: 100px;*/
+				/*margin: 100px;*/
+				/*border: 100px;*/
+				/*
+				 * 转换为块元素
+				 */
+				
+					display: inline-block;
+					width: 200px;
+					height: 200px;
+					
+				/*
+				 * 隐藏元素
+				 */
+				/*display: none;*/
+			
+			}
+			a{
+				background-color: orange;
+				display: block;
+				font-family: "微软雅黑";
+			}
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: #BBFFAA;
+			}
+		</style>
+	</head>
+	<body>
+		<span class="s1">我是span</span>
+		<span class="s1">我是span</span>
+		<a href="#">超链接1</a>
+		<a href="#">超链接2</a>
+		<div class="box1"></div>
+	</body>
+</html>
